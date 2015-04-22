@@ -33,9 +33,9 @@
         <service
             android:name=".SampleCutinService"
             android:icon="@drawable/ic_launcher"
-            android:process=".com.garlicg.samplecutin" >
+            android:process=".com.garlicg.cutinsupportsample" >
             <intent-filter>
-                <action android:name="com.garlicg.samplecutin.SampleCutinService" />
+                <action android:name="com.garlicg.cutinsupportsample.SampleCutinService" />
             </intent-filter>
         </service>
 
