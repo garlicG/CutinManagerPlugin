@@ -18,6 +18,8 @@ public class Demo {
 
     /**
      * Play cutin service. If there are playing cutin , stop it and new cutin service start.
+     * @param intent
+     * @return
      */
     public ComponentName play(Intent intent) {
         forceStop();
@@ -56,7 +58,7 @@ public class Demo {
     }
 
     /**
-     * 再生中のカットインが存在する場合は停止します。
+     * Stop cut-in playing,
      */
     public boolean forceStop(){
         boolean isStop = false;

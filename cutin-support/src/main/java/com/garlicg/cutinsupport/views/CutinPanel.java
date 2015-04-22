@@ -22,7 +22,7 @@ import com.garlicg.cutinsupport.R;
 
 /**
  * Base Panel Activity
- * このActivityは透明で、表示部分はCutinPanel
+ * This activity will be transparent with dark or light theme depends on state from intent,
  */
 public abstract class CutinPanel extends FragmentActivity {
 
