@@ -1,4 +1,4 @@
-# CutinSupportAndroid
+# CutinSupport
 Backport library for create CUT-IN App works on CUT-IN Manager.
 
 
@@ -27,7 +27,7 @@ Now preparing...
 
 API Level
 -------
-Ghost works on API level 10+.
+CutinSupport works on API level 10+.
 
 License
 -------
