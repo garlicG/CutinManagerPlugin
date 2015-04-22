@@ -17,12 +17,12 @@ import com.garlicg.cutinsupport.CutinService;
 
 public class SampleEngine2 extends CutinEngine{
 
-    private ImageView mImage;
-    private View mLayout;
-
     public SampleEngine2(CutinService cutinService) {
         super(cutinService);
     }
+
+    private ImageView mImage;
+    private View mLayout;
 
     @Override
     public View onCreateLayout(Context context) {
@@ -60,16 +60,7 @@ public class SampleEngine2 extends CutinEngine{
         translate.setInterpolator(new LinearInterpolator());
         tornado.addAnimation(translate);
 
-        tornado.setAnimationListener(new Animation.AnimationListener() {
-
-            @Override
-            public void onAnimationStart(Animation animation) {
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-            }
-
+        tornado.setAnimationListener(new AnimationListenerAdapter(){
             @Override
             public void onAnimationEnd(Animation animation) {
                 finishCutin();

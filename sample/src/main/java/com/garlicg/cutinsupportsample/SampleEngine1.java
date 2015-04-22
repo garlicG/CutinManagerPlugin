@@ -67,18 +67,10 @@ public class SampleEngine1 extends CutinEngine{
         fadeOut.setStartOffset(1200);
         tornado.addAnimation(fadeOut);
 
-        tornado.setAnimationListener(new Animation.AnimationListener() {
-
-            @Override
-            public void onAnimationStart(Animation animation) {
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-            }
-
+        tornado.setAnimationListener(new AnimationListenerAdapter(){
             @Override
             public void onAnimationEnd(Animation animation) {
+                super.onAnimationEnd(animation);
                 finishCutin();
             }
         });
