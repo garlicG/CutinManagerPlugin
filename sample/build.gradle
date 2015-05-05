@@ -22,6 +22,6 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.1.0'
-//    compile project(':cutin-support')
-    compile 'com.garlicg:cutin-support:3.0.1'
+    compile project(':cutin-support')
+//    compile 'com.garlicg:cutin-support:3.0.1'
 }
