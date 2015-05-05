@@ -7,7 +7,7 @@ import android.app.Service;
 public class CutinItem {
     public final Class<? extends Service> serviceClass;
     public final String cutinName;
-    public long cutinId = -1;
+    public long orderId = -1;
     public int triggerId = CutinManagerUtils.TRIGGER_ID_DEMO;
 
     /**
@@ -23,13 +23,13 @@ public class CutinItem {
      * CutinManager app uses the serviceClass as identifying for service
      * intent.
      */
-    public CutinItem(Class<? extends Service> serviceClass,String cutinName, long cutinId) {
+    public CutinItem(Class<? extends Service> serviceClass,String cutinName, long orderId) {
         this(serviceClass, cutinName);
-        this.cutinId = cutinId;
+        this.orderId = orderId;
     }
 
-    public CutinItem(Class<? extends Service> serviceClass,String cutinName, long cutinId , int triggerId) {
-        this(serviceClass, cutinName , cutinId);
+    public CutinItem(Class<? extends Service> serviceClass,String cutinName, long orderId, int triggerId) {
+        this(serviceClass, cutinName , orderId);
         this.triggerId = triggerId;
     }
 

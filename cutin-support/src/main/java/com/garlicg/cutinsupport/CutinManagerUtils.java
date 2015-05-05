@@ -57,7 +57,11 @@ public class CutinManagerUtils {
      * Panel -> Manager
      * Manager -> CutinService
      */
+    public final static String EXTRA_ORDER_ID ="cutin_id";
+
+    @Deprecated
     public final static String EXTRA_CUTIN_ID ="cutin_id";
+
 
     /**
      * Trigger list of CutinManager
@@ -103,7 +107,7 @@ public class CutinManagerUtils {
         Intent intent = new Intent();
         intent.putExtra(EXTRA_CUTIN_ACTION, item.serviceClass.getName());
         intent.putExtra(EXTRA_CUTIN_TITLE, item.cutinName);
-        intent.putExtra(EXTRA_CUTIN_ID, item.cutinId);
+        intent.putExtra(EXTRA_ORDER_ID, item.orderId);
         return intent;
     }
 
@@ -147,7 +151,7 @@ public class CutinManagerUtils {
         intent.setPackage(PACKAGE_NAME_CUTIN_MANAGER);
         intent.putExtra(EXTRA_CUTIN_ACTION, item.serviceClass.getName());
         intent.putExtra(EXTRA_CUTIN_TITLE, item.cutinName);
-        intent.putExtra(EXTRA_CUTIN_ID, item.cutinId);
+        intent.putExtra(EXTRA_ORDER_ID, item.orderId);
         return intent;
     }
 

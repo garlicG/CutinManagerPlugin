@@ -34,28 +34,28 @@ public class Demo {
         return play(serviceClass , triggerId);
     }
 
-    public ComponentName play(Class<? extends Service> serviceClass , long cutinId , int triggerId) {
-        return play(getPlayIntent(serviceClass , cutinId , triggerId));
+    public ComponentName play(Class<? extends Service> serviceClass , long orderId , int triggerId) {
+        return play(getPlayIntent(serviceClass , orderId , triggerId));
     }
 
-    public ComponentName play(Class<? extends Service> serviceClass , long cutinId ,String notifyPackageName ,String ticker){
-        Intent intent = getPlayIntent(serviceClass , cutinId ,CutinManagerUtils.TRIGGER_ID_NOTIFICATION);
+    public ComponentName play(Class<? extends Service> serviceClass , long orderId ,String notifyPackageName ,String ticker){
+        Intent intent = getPlayIntent(serviceClass , orderId ,CutinManagerUtils.TRIGGER_ID_NOTIFICATION);
         intent.putExtra(CutinManagerUtils.EXTRA_NOTIFICATION_PACKAGE_NAME,notifyPackageName);
         intent.putExtra(CutinManagerUtils.EXTRA_NOTIFICATION_TICKER,ticker);
         return play(intent);
     }
 
-    public Intent getPlayIntent(Class<? extends Service> cutinService , long cutinId){
-        return getPlayIntent(cutinService , cutinId , CutinManagerUtils.TRIGGER_ID_DEMO);
+    public Intent getPlayIntent(Class<? extends Service> cutinService , long orderId){
+        return getPlayIntent(cutinService , orderId , CutinManagerUtils.TRIGGER_ID_DEMO);
     }
 
     public Intent getPlayIntent(CutinItem item){
-        return getPlayIntent(item.serviceClass , item.cutinId , item.triggerId);
+        return getPlayIntent(item.serviceClass , item.orderId, item.triggerId);
     }
 
-    public Intent getPlayIntent(Class<? extends Service> cutinService , long cutinId , int triggerId){
+    public Intent getPlayIntent(Class<? extends Service> cutinService , long orderId , int triggerId){
         Intent intent = new Intent(mContext ,cutinService );
-        intent.putExtra(CutinManagerUtils.EXTRA_CUTIN_ID, cutinId);
+        intent.putExtra(CutinManagerUtils.EXTRA_ORDER_ID, orderId);
         intent.putExtra(CutinManagerUtils.EXTRA_TRIGGER_ID , triggerId);
         return intent;
     }

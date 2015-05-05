@@ -32,9 +32,9 @@ public abstract class CutinService extends Service {
 
     @Override
     final public int onStartCommand(final Intent intent, final int flags, final int startId) {
-        if (!mStarted) {
+        if (!mStarted && intent != null) {
             mStarted = true;
-            mEngine = onCreateEngine(intent ,intent.getLongExtra(CutinManagerUtils.EXTRA_CUTIN_ID, -1));
+            mEngine = onCreateEngine(intent ,intent.getLongExtra(CutinManagerUtils.EXTRA_ORDER_ID, -1));
             if(mEngine == null)return START_NOT_STICKY;
             createLayout();
             // must to be possible to get view size on start method.
