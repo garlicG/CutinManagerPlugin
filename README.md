@@ -14,7 +14,7 @@ repositories {
  (...)
 
 dependencies {
-    compile 'com.garlicg:cutin-support:3.0.1'
+    compile 'com.garlicg:cutin-support:3.1.1'
 }
 
 ```
