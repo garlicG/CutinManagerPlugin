@@ -1,4 +1,4 @@
-package com.garlicg.cutinsupport.views;
+package com.garlicg.cutinsupport.ui;
 
 import android.app.Activity;
 import android.app.AlertDialog;

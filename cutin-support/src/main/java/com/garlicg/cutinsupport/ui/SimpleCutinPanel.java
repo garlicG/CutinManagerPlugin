@@ -1,4 +1,4 @@
-package com.garlicg.cutinsupport.views;
+package com.garlicg.cutinsupport.ui;
 
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;

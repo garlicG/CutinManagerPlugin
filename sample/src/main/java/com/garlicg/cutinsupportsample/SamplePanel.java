@@ -3,7 +3,7 @@ package com.garlicg.cutinsupportsample;
 import android.os.Bundle;
 
 import com.garlicg.cutinsupport.CutinItem;
-import com.garlicg.cutinsupport.views.SimpleCutinPanel;
+import com.garlicg.cutinsupport.ui.SimpleCutinPanel;
 
 import java.util.ArrayList;
 
