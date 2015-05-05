@@ -106,15 +106,7 @@ public abstract class SimpleCutinPanel extends CutinPanel implements AdapterView
 
     @Override
     public void onClick(View view) {
-        if(isPickable()){
-            CutinItem item = getCheckedItem();
-            if(item != null){
-                onOKClick(item);
-            }
-        }
-        else {
-            onOKClick(null);
-        }
+        handleOKClick(getCheckedItem());
     }
 
     public void setOkButtonEnable(boolean enable){

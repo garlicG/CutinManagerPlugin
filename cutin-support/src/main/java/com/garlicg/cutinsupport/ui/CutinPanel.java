@@ -83,25 +83,39 @@ public abstract class CutinPanel extends FragmentActivity {
         return mCalledFromManager;
     }
 
-    public void onOKClick(@Nullable CutinItem item) {
+    public void handleOKClick(@Nullable CutinItem item){
         // called from manager
         if(isPickable()){
-            if(item == null)return;
-            Intent intent = CutinManagerUtils.buildResultIntent(item);
-            setResult(Activity.RESULT_OK, intent);
-            finish();
+            finishWithCutinResult(item);
         }
         // called from other (launcher etc...)
         else{
-            FragmentManager fm = getSupportFragmentManager();
-            // existManager
-            if(CutinManagerUtils.existManager(this)){
-                new LaunchManagerDialog().showSingly(fm);
-            }
-            // show go to Market dialog
-            else {
-                new DownloadManagerDialog().showSingly(fm);
-            }
+            showCutinManager();
+        }
+    }
+
+    /**
+     * Return cutin information to CutinManager.
+     */
+    public void finishWithCutinResult(CutinItem item){
+        if(item == null)return;
+        Intent intent = CutinManagerUtils.buildResultIntent(item);
+        setResult(Activity.RESULT_OK, intent);
+        finish();
+    }
+
+    /**
+     * Show CutinManager or go to market page of CutinManager.
+     */
+    public void showCutinManager(){
+        FragmentManager fm = getSupportFragmentManager();
+        // existManager
+        if(CutinManagerUtils.existManager(this)){
+            new LaunchManagerDialog().showSingly(fm);
+        }
+        // show go to Market dialog
+        else {
+            new DownloadManagerDialog().showSingly(fm);
         }
     }
 
@@ -190,4 +204,12 @@ public abstract class CutinPanel extends FragmentActivity {
         @Override
         public void onClick(DialogInterface dialogInterface, int i) {}
     }
+
+
+
+    /**
+     * Use handleOKClick instead of this.
+     */
+    @Deprecated
+    public void onOKClick(@Nullable CutinItem item) {}
 }
