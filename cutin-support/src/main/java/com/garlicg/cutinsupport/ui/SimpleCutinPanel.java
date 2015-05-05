@@ -16,9 +16,6 @@ import com.garlicg.cutinsupport.R;
 
 import java.util.ArrayList;
 
-/**
- * Created by goto.t on 2015/04/15.
- */
 public abstract class SimpleCutinPanel extends CutinPanel implements AdapterView.OnItemClickListener , View.OnClickListener{
 
     private TextView mOptionButton;
