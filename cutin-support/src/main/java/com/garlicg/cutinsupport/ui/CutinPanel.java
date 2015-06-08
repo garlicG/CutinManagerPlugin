@@ -18,6 +18,7 @@ import android.view.WindowManager;
 import com.garlicg.cutinsupport.CutinItem;
 import com.garlicg.cutinsupport.CutinManagerUtils;
 import com.garlicg.cutinsupport.Demo;
+import com.garlicg.cutinsupport.R;
 
 /**
  * Base Panel Activity
