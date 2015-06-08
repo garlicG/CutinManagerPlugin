@@ -12,7 +12,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.garlicg.cutinsupport.CutinItem;
-import com.garlicg.cutinsupport.R;
 
 import java.util.ArrayList;
 

@@ -13,7 +13,6 @@ import com.garlicg.cutinsupport.CutinItem;
 
 import java.util.List;
 
-import com.garlicg.cutinsupport.R;
 
 public class SimpleCutinListAdapter extends ArrayAdapter<CutinItem> {
 
