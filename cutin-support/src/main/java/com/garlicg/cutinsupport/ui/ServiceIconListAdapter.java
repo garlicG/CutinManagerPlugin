@@ -37,11 +37,11 @@ public class ServiceIconListAdapter extends SimpleCutinListAdapter {
                 if (si.icon != 0) {
                     icon = res.getDrawable(si.icon);
                     int bond = (int) (res.getDisplayMetrics().density * 48 + 0.5f);
-                    icon.setBounds(0, 0, bond, bond);
+                    if (icon != null) {
+                        icon.setBounds(0, 0, bond, bond);
+                    }
                 }
-            } catch (PackageManager.NameNotFoundException e) {
-                // none
-            } catch (Resources.NotFoundException e) {
+            } catch (PackageManager.NameNotFoundException | Resources.NotFoundException e) {
                 // none
             }
         }
