@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.os.Handler;
 import android.os.IBinder;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.WindowManager;
 
@@ -22,20 +24,23 @@ public abstract class CutinService extends Service {
     /**
      * Create root view which is inflated to full screen window.
      */
-    protected abstract CutinEngine onCreateEngine(Intent intent,long cutinId);
+    @Nullable
+    protected abstract CutinEngine onCreateEngine(@NonNull Intent intent,long cutinId);
 
     @Override
     final public IBinder onBind(Intent arg0) {
         return null;
     }
 
-
     @Override
     final public int onStartCommand(final Intent intent, final int flags, final int startId) {
         if (!mStarted && intent != null) {
             mStarted = true;
             mEngine = onCreateEngine(intent ,intent.getLongExtra(CutinManagerUtils.EXTRA_ORDER_ID, -1));
-            if(mEngine == null)return START_NOT_STICKY;
+            if(mEngine == null){
+                finishCutin();
+                return START_NOT_STICKY;
+            }
             createLayout();
             // must to be possible to get view size on start method.
             new Handler().postDelayed(new Runnable() {
@@ -87,6 +92,7 @@ public abstract class CutinService extends Service {
         }
         if (mWindowManager != null && mLayout != null) {
             mWindowManager.removeView(mLayout);
+            mLayout = null;
             mWindowManager = null;
         }
     }
