@@ -1,4 +1,4 @@
-package com.garlicg.cutinsupportsample;
+package com.garlicg.cutinsupportsample.util;
 
 import android.view.animation.Animation;
 

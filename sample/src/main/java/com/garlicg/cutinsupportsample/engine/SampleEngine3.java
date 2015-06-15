@@ -1,4 +1,4 @@
-package com.garlicg.cutinsupportsample;
+package com.garlicg.cutinsupportsample.engine;
 
 import android.content.Context;
 import android.view.Gravity;
@@ -13,6 +13,8 @@ import android.widget.ImageView;
 
 import com.garlicg.cutinsupport.CutinEngine;
 import com.garlicg.cutinsupport.CutinService;
+import com.garlicg.cutinsupportsample.R;
+import com.garlicg.cutinsupportsample.util.AnimationListenerAdapter;
 
 public class SampleEngine3 extends CutinEngine{
 
@@ -25,8 +27,8 @@ public class SampleEngine3 extends CutinEngine{
 
     @Override
     public View onCreateLayout(Context context) {
-        mLayout = LayoutInflater.from(getContext()).inflate(R.layout.sample_engine, null);
-        mImage = (ImageView) mLayout.findViewById(R.id.cutinImage);
+        mLayout = LayoutInflater.from(getContext()).inflate(R.layout.engine_sample, null);
+        mImage = (ImageView) mLayout.findViewById(R.id.image);
         FrameLayout.LayoutParams params = (FrameLayout.LayoutParams)mImage.getLayoutParams();
         params.gravity = Gravity.BOTTOM| Gravity.LEFT;
         return mLayout;

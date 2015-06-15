@@ -1,4 +1,4 @@
-package com.garlicg.cutinsupportsample;
+package com.garlicg.cutinsupportsample.engine;
 
 import android.content.Context;
 import android.view.Gravity;
@@ -14,6 +14,8 @@ import android.widget.ImageView;
 
 import com.garlicg.cutinsupport.CutinEngine;
 import com.garlicg.cutinsupport.CutinService;
+import com.garlicg.cutinsupportsample.R;
+import com.garlicg.cutinsupportsample.util.AnimationListenerAdapter;
 
 public class SampleEngine1 extends CutinEngine{
 
@@ -21,14 +23,13 @@ public class SampleEngine1 extends CutinEngine{
         super(cutinService);
     }
 
-
     private ImageView mImage;
     private View mLayout;
 
     @Override
     public View onCreateLayout(Context context) {
-        mLayout = LayoutInflater.from(getContext()).inflate(R.layout.sample_engine, null);
-        mImage = (ImageView) mLayout.findViewById(R.id.cutinImage);
+        mLayout = LayoutInflater.from(getContext()).inflate(R.layout.engine_sample, null);
+        mImage = (ImageView) mLayout.findViewById(R.id.image);
         FrameLayout.LayoutParams params = (FrameLayout.LayoutParams)mImage.getLayoutParams();
         params.gravity = Gravity.CENTER;
         return mLayout;
@@ -70,7 +71,6 @@ public class SampleEngine1 extends CutinEngine{
         tornado.setAnimationListener(new AnimationListenerAdapter(){
             @Override
             public void onAnimationEnd(Animation animation) {
-                super.onAnimationEnd(animation);
                 finishCutin();
             }
         });
@@ -81,6 +81,5 @@ public class SampleEngine1 extends CutinEngine{
     @Override
     public void onDestroy() {
         // none
-
     }
 }
