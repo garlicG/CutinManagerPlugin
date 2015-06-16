@@ -33,17 +33,16 @@ public class SurfaceViewEngine extends CutinEngine{
     public View onCreateLayout(Context context) {
         FrameLayout frameLayout = new FrameLayout(context);
         mSurfaceView = new SurfaceView(context);
+        mDrawingThread = new DrawingThread();
+        mDrawingThread.start();
+        mDrawingThread.mSurface = mSurfaceView.getHolder();
+        mDrawingThread.mSurface.setFormat(PixelFormat.TRANSPARENT);
         frameLayout.addView(mSurfaceView);
         return frameLayout;
     }
 
     @Override
     public void onStart() {
-        mDrawingThread = new DrawingThread();
-        mDrawingThread.start();
-        mDrawingThread.mSurface = mSurfaceView.getHolder();
-        mDrawingThread.mSurface.setFormat(PixelFormat.TRANSPARENT);
-
         synchronized (mDrawingThread) {
             mDrawingThread.mRunning = true;
             mDrawingThread.notify();
