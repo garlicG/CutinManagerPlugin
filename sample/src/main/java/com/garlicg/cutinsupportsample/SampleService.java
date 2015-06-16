@@ -11,6 +11,7 @@ import com.garlicg.cutinsupportsample.engine.BannerEngine;
 import com.garlicg.cutinsupportsample.engine.SampleEngine1;
 import com.garlicg.cutinsupportsample.engine.SampleEngine2;
 import com.garlicg.cutinsupportsample.engine.SampleEngine3;
+import com.garlicg.cutinsupportsample.engine.SurfaceViewEngine;
 
 public class SampleService extends CutinService{
 
@@ -46,7 +47,7 @@ public class SampleService extends CutinService{
             return new BannerEngine(this , option);
         }
         else if(orderId == ORDER_SURFACE){
-            return null;
+            return new SurfaceViewEngine(this);
         }
         else if(orderId == ORDER_GL_SURFACE){
             return null;
