@@ -8,6 +8,7 @@ import android.view.Gravity;
 import com.garlicg.cutinsupport.CutinEngine;
 import com.garlicg.cutinsupport.CutinService;
 import com.garlicg.cutinsupportsample.engine.BannerEngine;
+import com.garlicg.cutinsupportsample.engine.GLSurfaceViewEngine;
 import com.garlicg.cutinsupportsample.engine.SampleEngine1;
 import com.garlicg.cutinsupportsample.engine.SampleEngine2;
 import com.garlicg.cutinsupportsample.engine.SampleEngine3;
@@ -50,7 +51,7 @@ public class SampleService extends CutinService{
             return new SurfaceViewEngine(this);
         }
         else if(orderId == ORDER_GL_SURFACE){
-            return null;
+            return new GLSurfaceViewEngine(this);
         }
         else {
             return null;
