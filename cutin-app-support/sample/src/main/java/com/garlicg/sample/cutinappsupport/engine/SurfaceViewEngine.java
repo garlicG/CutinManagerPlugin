@@ -1,4 +1,4 @@
-package com.garlicg.cutinsupportsample.engine;
+package com.garlicg.sample.cutinappsupport.engine;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -13,8 +13,8 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.garlicg.cutinsupport.CutinEngine;
-import com.garlicg.cutinsupport.CutinService;
+import com.garlicg.cutin.appsupport.CutinEngine;
+import com.garlicg.cutin.appsupport.CutinService;
 
 
 /**
@@ -23,7 +23,6 @@ import com.garlicg.cutinsupport.CutinService;
 public class SurfaceViewEngine extends CutinEngine{
 
     private DrawingThread mDrawingThread;
-    private SurfaceView mSurfaceView;
 
     public SurfaceViewEngine(CutinService cutinService) {
         super(cutinService);
@@ -32,12 +31,12 @@ public class SurfaceViewEngine extends CutinEngine{
     @Override
     public View onCreateLayout(Context context) {
         FrameLayout frameLayout = new FrameLayout(context);
-        mSurfaceView = new SurfaceView(context);
+        SurfaceView surfaceView = new SurfaceView(context);
         mDrawingThread = new DrawingThread();
         mDrawingThread.start();
-        mDrawingThread.mSurface = mSurfaceView.getHolder();
+        mDrawingThread.mSurface = surfaceView.getHolder();
         mDrawingThread.mSurface.setFormat(PixelFormat.TRANSPARENT);
-        frameLayout.addView(mSurfaceView);
+        frameLayout.addView(surfaceView);
         return frameLayout;
     }
 
@@ -68,7 +67,7 @@ public class SurfaceViewEngine extends CutinEngine{
             while (mDrawingThread.mActive) {
                 try {
                     mDrawingThread.wait();
-                } catch (InterruptedException e) {
+                } catch (InterruptedException ignore) {
                 }
             }
             // Make sure the drawing thread goes away.

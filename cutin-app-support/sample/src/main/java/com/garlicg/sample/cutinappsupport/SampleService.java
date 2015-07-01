@@ -1,18 +1,18 @@
-package com.garlicg.cutinsupportsample;
+package com.garlicg.sample.cutinappsupport;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.Gravity;
 
-import com.garlicg.cutinsupport.CutinEngine;
-import com.garlicg.cutinsupport.CutinService;
-import com.garlicg.cutinsupportsample.engine.BannerEngine;
-import com.garlicg.cutinsupportsample.engine.GLSurfaceViewEngine;
-import com.garlicg.cutinsupportsample.engine.SampleEngine1;
-import com.garlicg.cutinsupportsample.engine.SampleEngine2;
-import com.garlicg.cutinsupportsample.engine.SampleEngine3;
-import com.garlicg.cutinsupportsample.engine.SurfaceViewEngine;
+import com.garlicg.cutin.appsupport.CutinEngine;
+import com.garlicg.cutin.appsupport.CutinService;
+import com.garlicg.sample.cutinappsupport.engine.BannerEngine;
+import com.garlicg.sample.cutinappsupport.engine.GLSurfaceViewEngine;
+import com.garlicg.sample.cutinappsupport.engine.SampleEngine1;
+import com.garlicg.sample.cutinappsupport.engine.SampleEngine2;
+import com.garlicg.sample.cutinappsupport.engine.SampleEngine3;
+import com.garlicg.sample.cutinappsupport.engine.SurfaceViewEngine;
 
 public class SampleService extends CutinService{
 

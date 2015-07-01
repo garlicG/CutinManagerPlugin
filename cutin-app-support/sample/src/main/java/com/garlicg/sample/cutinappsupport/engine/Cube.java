@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.garlicg.cutinsupportsample.engine;
+package com.garlicg.sample.cutinappsupport.engine;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

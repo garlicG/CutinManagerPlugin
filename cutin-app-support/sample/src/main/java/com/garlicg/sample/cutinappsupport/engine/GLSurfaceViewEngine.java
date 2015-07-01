@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.garlicg.cutinsupportsample.engine;
+package com.garlicg.sample.cutinappsupport.engine;
 
 import android.content.Context;
 import android.graphics.PixelFormat;
@@ -23,8 +23,8 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.garlicg.cutinsupport.CutinEngine;
-import com.garlicg.cutinsupport.CutinService;
+import com.garlicg.cutin.appsupport.CutinEngine;
+import com.garlicg.cutin.appsupport.CutinService;
 
 
 /**

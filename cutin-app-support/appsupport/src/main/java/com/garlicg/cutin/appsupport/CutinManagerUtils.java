@@ -1,4 +1,4 @@
-package com.garlicg.cutinsupport;
+package com.garlicg.cutin.appsupport;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;

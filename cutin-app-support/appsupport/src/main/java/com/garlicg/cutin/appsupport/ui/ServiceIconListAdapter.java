@@ -1,4 +1,4 @@
-package com.garlicg.cutinsupport.ui;
+package com.garlicg.cutin.appsupport.ui;
 
 import android.app.Service;
 import android.content.ComponentName;
@@ -9,7 +9,7 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.widget.TextView;
 
-import com.garlicg.cutinsupport.CutinItem;
+import com.garlicg.cutin.appsupport.CutinItem;
 
 import java.util.List;
 

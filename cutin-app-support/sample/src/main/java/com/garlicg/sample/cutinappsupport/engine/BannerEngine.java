@@ -1,4 +1,4 @@
-package com.garlicg.cutinsupportsample.engine;
+package com.garlicg.sample.cutinappsupport.engine;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -16,12 +16,12 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.garlicg.cutinsupport.CutinEngine;
-import com.garlicg.cutinsupport.CutinService;
-import com.garlicg.cutinsupportsample.R;
-import com.garlicg.cutinsupportsample.util.AnimationListenerAdapter;
-import com.garlicg.cutinsupportsample.util.DisplayUtils;
-import com.garlicg.cutinsupportsample.util.GravityUtils;
+import com.garlicg.cutin.appsupport.CutinEngine;
+import com.garlicg.cutin.appsupport.CutinService;
+import com.garlicg.sample.cutinappsupport.R;
+import com.garlicg.sample.cutinappsupport.util.AnimationListenerAdapter;
+import com.garlicg.sample.cutinappsupport.util.DisplayUtils;
+import com.garlicg.sample.cutinappsupport.util.GravityUtils;
 
 public class BannerEngine extends CutinEngine{
 

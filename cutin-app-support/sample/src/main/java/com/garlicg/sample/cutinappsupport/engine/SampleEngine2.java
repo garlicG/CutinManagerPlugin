@@ -1,4 +1,4 @@
-package com.garlicg.cutinsupportsample.engine;
+package com.garlicg.sample.cutinappsupport.engine;
 
 import android.content.Context;
 import android.view.Gravity;
@@ -12,10 +12,10 @@ import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import com.garlicg.cutinsupport.CutinEngine;
-import com.garlicg.cutinsupport.CutinService;
-import com.garlicg.cutinsupportsample.R;
-import com.garlicg.cutinsupportsample.util.AnimationListenerAdapter;
+import com.garlicg.cutin.appsupport.CutinEngine;
+import com.garlicg.cutin.appsupport.CutinService;
+import com.garlicg.sample.cutinappsupport.R;
+import com.garlicg.sample.cutinappsupport.util.AnimationListenerAdapter;
 
 public class SampleEngine2 extends CutinEngine{
 

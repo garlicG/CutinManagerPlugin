@@ -1,7 +1,7 @@
-package com.garlicg.cutinsupport.ui;
+package com.garlicg.cutin.appsupport.ui;
 
 
-import com.garlicg.cutinsupport.CutinItem;
+import com.garlicg.cutin.appsupport.CutinItem;
 
 /**
  * Item as category label of ListView .

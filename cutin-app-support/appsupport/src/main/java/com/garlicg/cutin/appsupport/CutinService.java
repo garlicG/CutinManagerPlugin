@@ -1,4 +1,4 @@
-package com.garlicg.cutinsupport;
+package com.garlicg.cutin.appsupport;
 
 import android.app.Service;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package com.garlicg.cutinsupport.ui;
+package com.garlicg.cutin.appsupport.ui;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -15,10 +15,10 @@ import android.support.v4.app.FragmentManager;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
-import com.garlicg.cutinsupport.CutinItem;
-import com.garlicg.cutinsupport.CutinManagerUtils;
-import com.garlicg.cutinsupport.Demo;
-import com.garlicg.cutinsupport.R;
+import com.garlicg.cutin.appsupport.CutinItem;
+import com.garlicg.cutin.appsupport.CutinManagerUtils;
+import com.garlicg.cutin.appsupport.Demo;
+import com.garlicg.cutin.appsupport.R;
 
 /**
  * Base Panel Activity

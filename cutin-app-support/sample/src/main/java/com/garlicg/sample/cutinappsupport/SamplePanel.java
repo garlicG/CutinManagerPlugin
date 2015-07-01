@@ -1,10 +1,10 @@
-package com.garlicg.cutinsupportsample;
+package com.garlicg.sample.cutinappsupport;
 
 import android.os.Bundle;
 
-import com.garlicg.cutinsupport.CutinItem;
-import com.garlicg.cutinsupport.ui.CategoryItem;
-import com.garlicg.cutinsupport.ui.SimpleCutinPanel;
+import com.garlicg.cutin.appsupport.CutinItem;
+import com.garlicg.cutin.appsupport.ui.CategoryItem;
+import com.garlicg.cutin.appsupport.ui.SimpleCutinPanel;
 
 import java.util.ArrayList;
 

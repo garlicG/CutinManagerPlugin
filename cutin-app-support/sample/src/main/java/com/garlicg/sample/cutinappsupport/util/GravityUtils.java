@@ -1,4 +1,4 @@
-package com.garlicg.cutinsupportsample.util;
+package com.garlicg.sample.cutinappsupport.util;
 
 import android.view.View;
 import android.view.ViewGroup;

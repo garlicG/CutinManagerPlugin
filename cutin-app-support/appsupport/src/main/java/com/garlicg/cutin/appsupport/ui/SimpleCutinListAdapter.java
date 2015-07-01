@@ -1,4 +1,4 @@
-package com.garlicg.cutinsupport.ui;
+package com.garlicg.cutin.appsupport.ui;
 
 
 import android.content.Context;
@@ -9,11 +9,11 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckedTextView;
 import android.widget.TextView;
 
-import com.garlicg.cutinsupport.CutinItem;
+import com.garlicg.cutin.appsupport.CutinItem;
 
 import java.util.List;
 
-import com.garlicg.cutinsupport.R;
+import com.garlicg.cutin.appsupport.R;
 
 public class SimpleCutinListAdapter extends ArrayAdapter<CutinItem> {
 
