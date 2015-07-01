@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CutinPanel.Light" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="cpDialogFrame">@drawable/cutin_dialog_light</item>
+        <item name="cpTextColor">@color/cutin_text_light</item>
+        <item name="cpCategoryTextColor">#686868</item>
+        <item name="cpCategoryBackground">@drawable/cutin_section_background_light</item>
+        <item name="cpListChoiceIndicatorSingle">@drawable/cutin_btn_radio_holo_light</item>
+        <item name="cpSelectorOverlay">?android:attr/selectableItemBackground</item>
+        <item name="cpDividerVertical">@drawable/cutin_divider_vertical_light</item>
+        <item name="cpDividerHorizontal">#E8E8E8</item>
+    </style>
+
+    <style name="CutinPanel.Dark" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="cpDialogFrame">@drawable/cutin_dialog_dark</item>
+        <item name="cpTextColor">@color/cutin_text_dark</item>
+        <item name="cpCategoryTextColor">#A8A8A8</item>
+        <item name="cpCategoryBackground">@drawable/cutin_section_background_dark</item>
+        <item name="cpListChoiceIndicatorSingle">@drawable/cutin_btn_radio_holo_dark</item>
+        <item name="cpSelectorOverlay">?android:attr/selectableItemBackground</item>
+        <item name="cpDividerVertical">@drawable/cutin_divider_vertical_dark</item>
+        <item name="cpDividerHorizontal">#484848</item>
+
+    </style>
+
+</resources>

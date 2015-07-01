@@ -1,0 +1,32 @@
+# OS
+Thumb.db
+.DS_Store
+
+# Android Studio
+*.iml
+*.ipr
+*.iws
+.idea/
+local.properties
+
+# Eclipse
+bin/
+gen/
+.classpath
+.project
+
+# Built application files
+*.apk
+*.ap_
+
+# Files for the Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Gradle files
+.gradle/
+build/
+gradle.properties
+gradle-app.setting

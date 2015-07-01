@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="cutin_register">Register</string>
-    <string name="cutin_option">Settings</string>
-    <string name="message_need_manager">To register the CUT-IN to your device triggers requires CUT-IN Manager.</string>
-    <string name="download">Download</string>
-    <string name="message_launch_manager">Select this app from the CUT-IN Manager.</string>
-    <string name="launch">Launch</string>
-</resources>

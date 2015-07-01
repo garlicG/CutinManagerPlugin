@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="cutin_register">登録する</string>
-    <string name="cutin_option">オプション</string>
-    <string name="message_need_manager">カットインを端末イベントに登録するためにはカットインマネージャーが必要です</string>
-    <string name="download">ダウンロード</string>
-    <string name="message_launch_manager">カットインマネージャーからこのアプリを選択してください</string>
-    <string name="launch">起動する</string>
-</resources>
