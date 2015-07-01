@@ -6,8 +6,8 @@ import com.garlicg.cutin.appsupport.CutinItem;
 /**
  * Item as category label of ListView .
  */
-public class CategoryItem extends CutinItem {
-    public CategoryItem(String label){
+public class SectionItem extends CutinItem {
+    public SectionItem(String label){
         super(null ,label);
     }
 }

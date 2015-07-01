@@ -25,7 +25,7 @@ public class SimpleCutinListAdapter extends ArrayAdapter<CutinItem> {
     public SimpleCutinListAdapter(Context context, List<CutinItem> objects , boolean checkable) {
         super(context, 0,objects);
         mResourceId = R.layout.cp_simple_list_item;
-        mResourceCategoryId = R.layout.cp_simple_list_item_category;
+        mResourceCategoryId = R.layout.cp_simple_list_item_section;
         mInflater = LayoutInflater.from(context);
         mCheckable = checkable;
     }
@@ -35,13 +35,13 @@ public class SimpleCutinListAdapter extends ArrayAdapter<CutinItem> {
         CutinItem item = getItem(position);
 
         // category
-        if(item instanceof CategoryItem){
+        if(item instanceof SectionItem){
 
             // dont care about viewholder because cost of findViewById is none.
             if(convertView == null){
                 convertView = mInflater.inflate(mResourceCategoryId, parent , false);
             }
-            bindCategory((TextView) convertView , (CategoryItem)item);
+            bindCategory((TextView) convertView , (SectionItem)item);
         }
 
         // content
@@ -57,7 +57,7 @@ public class SimpleCutinListAdapter extends ArrayAdapter<CutinItem> {
         return convertView;
     }
 
-    protected void bindCategory(TextView textView , CategoryItem item){
+    protected void bindCategory(TextView textView , SectionItem item){
         textView.setText(item.cutinName);
     }
 
@@ -68,7 +68,7 @@ public class SimpleCutinListAdapter extends ArrayAdapter<CutinItem> {
     @Override
     public boolean isEnabled(int position) {
         Object obj = getItem(position);
-        return !(obj instanceof CategoryItem);
+        return !(obj instanceof SectionItem);
     }
 
     @Override
@@ -79,6 +79,6 @@ public class SimpleCutinListAdapter extends ArrayAdapter<CutinItem> {
     @Override
     public int getItemViewType(int position) {
         CutinItem item = getItem(position);
-        return item instanceof CategoryItem ? 1 : 0;
+        return item instanceof SectionItem ? 1 : 0;
     }
 }
