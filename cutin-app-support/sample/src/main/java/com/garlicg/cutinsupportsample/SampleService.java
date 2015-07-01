@@ -37,7 +37,7 @@ public class SampleService extends CutinService{
         }
         else if(orderId == ORDER_BANNER){
             BannerEngine.Option option = new BannerEngine.Option();
-            option.text = "BANNER!";
+            option.text = "CUT-IN!";
             option.textSizeDp = 32;
             option.textVerticalGravity = Gravity.BOTTOM;
             option.mainImageResource = R.drawable.sample_180_120;
