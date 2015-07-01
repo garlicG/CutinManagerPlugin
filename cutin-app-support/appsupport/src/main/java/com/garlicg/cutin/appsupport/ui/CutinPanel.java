@@ -16,7 +16,7 @@ import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
 import com.garlicg.cutin.appsupport.CutinItem;
-import com.garlicg.cutin.appsupport.CutinManagerUtils;
+import com.garlicg.cutin.appsupport.ManagerUtils;
 import com.garlicg.cutin.appsupport.Demo;
 import com.garlicg.cutin.appsupport.R;
 
@@ -40,14 +40,14 @@ public abstract class CutinPanel extends FragmentActivity {
 
         // set theme of cutin manager
         Intent intent = getIntent();
-        int cmTheme = intent.getIntExtra(CutinManagerUtils.EXTRA_THEME_UI , CutinManagerUtils.THEME_UI_LIGHT);
+        int cmTheme = intent.getIntExtra(ManagerUtils.EXTRA_THEME_UI , ManagerUtils.THEME_UI_LIGHT);
         setTheme(resolveDialogThemeResource(cmTheme));
 
         // trigger id from cutin manager
-        mTriggerId = getIntent().getIntExtra(CutinManagerUtils.EXTRA_TRIGGER_ID , CutinManagerUtils.TRIGGER_ID_DEMO);
+        mTriggerId = getIntent().getIntExtra(ManagerUtils.EXTRA_TRIGGER_TYPE, ManagerUtils.TRIGGER_TYPE_DEMO);
 
         // flag of called from manager?
-        mCalledFromManager = CutinManagerUtils.isCalledFromCutinManager(intent);
+        mCalledFromManager = ManagerUtils.isCalledFromManager(intent);
 
         mDemo = new Demo(this);
 
@@ -63,7 +63,7 @@ public abstract class CutinPanel extends FragmentActivity {
     }
 
     protected int resolveDialogThemeResource(int cmTheme){
-        if(cmTheme == CutinManagerUtils.THEME_UI_DARK){
+        if(cmTheme == ManagerUtils.THEME_UI_DARK){
             return R.style.CutinPanel_Dark;
         }else {
             return R.style.CutinPanel_Light;
@@ -99,7 +99,7 @@ public abstract class CutinPanel extends FragmentActivity {
      */
     public void finishWithCutinResult(CutinItem item){
         if(item == null)return;
-        Intent intent = CutinManagerUtils.buildResultIntent(item);
+        Intent intent = ManagerUtils.buildResultIntent(item);
         setResult(Activity.RESULT_OK, intent);
         finish();
     }
@@ -110,7 +110,7 @@ public abstract class CutinPanel extends FragmentActivity {
     public void showCutinManager(){
         FragmentManager fm = getSupportFragmentManager();
         // existManager
-        if(CutinManagerUtils.existManager(this)){
+        if(ManagerUtils.existManager(this)){
             new LaunchManagerDialog().showSingly(fm);
         }
         // show go to Market dialog
@@ -146,7 +146,7 @@ public abstract class CutinPanel extends FragmentActivity {
 
         @Override
         public void onClick(DialogInterface dialogInterface, int i) {
-            Intent intent = CutinManagerUtils.buildMarketIntent();
+            Intent intent = ManagerUtils.buildMarketIntent();
             startActivity(intent);
             getActivity().finish();
         }
@@ -172,7 +172,7 @@ public abstract class CutinPanel extends FragmentActivity {
 
         @Override
         public void onClick(DialogInterface dialogInterface, int i) {
-            Intent startManager = CutinManagerUtils.buildLauncherIntent(getActivity());
+            Intent startManager = ManagerUtils.buildLauncherIntent(getActivity());
             startActivity(startManager);
             getActivity().finish();
         }

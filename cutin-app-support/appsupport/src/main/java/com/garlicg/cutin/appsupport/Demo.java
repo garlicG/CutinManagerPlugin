@@ -7,18 +7,20 @@ import android.content.Context;
 import android.content.Intent;
 
 /**
- * Call cutinservice.
+ * Helper for demo play CUT-IN.
  */
 public class Demo {
 
+    private static final TriggerInfo DEFAULT_TRIGGER_INFO = TriggerInfo.emulate("TITLE" , "message");
+    private final Context mContext;
     private Intent mCutinIntent;
-    private Context mContext;
+
     public Demo(Context context){
         mContext = context;
     }
 
     /**
-     * Play cutin service. If there are playing cutin , stop it and new cutin service start.
+     * Play CUT-IN of the intent defined. To create intent, use #getPlayIntent() .
      */
     public ComponentName play(Intent intent) {
         forceStop();
@@ -26,42 +28,46 @@ public class Demo {
         return mContext.startService(intent);
     }
 
+    /**
+     * Play CUT-IN of the service defined.
+     */
+    public ComponentName play(Class<? extends Service> serviceClass) {
+        return play(getPlayIntent(
+                serviceClass,
+                0,
+                null));
+    }
+
+    /**
+     * Play CUT-IN of the CutinItem defined.
+     */
     public ComponentName play(CutinItem item) {
-        return play(getPlayIntent(item));
+        return play(getPlayIntent(
+                item.serviceClass ,
+                item.orderId ,
+                item.triggerInfo));
     }
 
-    public ComponentName play(Class<? extends Service> serviceClass ,int triggerId){
-        return play(serviceClass , triggerId);
-    }
-
-    public ComponentName play(Class<? extends Service> serviceClass , long orderId , int triggerId) {
-        return play(getPlayIntent(serviceClass , orderId , triggerId));
-    }
-
-    public ComponentName play(Class<? extends Service> serviceClass , long orderId ,String notifyPackageName ,String ticker){
-        Intent intent = getPlayIntent(serviceClass , orderId ,CutinManagerUtils.TRIGGER_ID_NOTIFICATION);
-        intent.putExtra(CutinManagerUtils.EXTRA_NOTIFICATION_PACKAGE_NAME,notifyPackageName);
-        intent.putExtra(CutinManagerUtils.EXTRA_NOTIFICATION_TICKER,ticker);
-        return play(intent);
-    }
-
-    public Intent getPlayIntent(Class<? extends Service> cutinService , long orderId){
-        return getPlayIntent(cutinService , orderId , CutinManagerUtils.TRIGGER_ID_DEMO);
-    }
-
-    public Intent getPlayIntent(CutinItem item){
-        return getPlayIntent(item.serviceClass , item.orderId, item.triggerId);
-    }
-
-    public Intent getPlayIntent(Class<? extends Service> cutinService , long orderId , int triggerId){
+    /**
+     * Get the play intent for show CUT-IN.
+     *
+     * @param cutinService Subclass of CutinService.
+     * @param orderId Option id to specify the CUT-IN.
+     * @param triggerInfo May be null. Option value to emulate trigger's info.
+     * @return Intent for show CUT-IN.
+     */
+    public Intent getPlayIntent(Class<? extends Service> cutinService , long orderId , TriggerInfo triggerInfo){
         Intent intent = new Intent(mContext ,cutinService );
-        intent.putExtra(CutinManagerUtils.EXTRA_ORDER_ID, orderId);
-        intent.putExtra(CutinManagerUtils.EXTRA_TRIGGER_ID , triggerId);
+        intent.putExtra(ManagerUtils.EXTRA_ORDER_ID, orderId);
+        TriggerInfo target = triggerInfo != null ? triggerInfo : DEFAULT_TRIGGER_INFO;
+        intent.putExtra(ManagerUtils.EXTRA_TRIGGER_TYPE, target.type);
+        intent.putExtra(ManagerUtils.EXTRA_CONTENT_TITLE, target.contentMessage);
+        intent.putExtra(ManagerUtils.EXTRA_CONTENT_MESSAGE, target.contentTitle);
         return intent;
     }
 
     /**
-     * Stop cut-in playing,
+     * Force stop CUT-IN playing.
      */
     public boolean forceStop(){
         boolean isStop = false;
@@ -69,16 +75,10 @@ public class Demo {
             try{
                 isStop = mContext.stopService(mCutinIntent);
             }catch(SecurityException e){
+                e.printStackTrace();
             }
         }
         mCutinIntent = null;
         return isStop;
-    }
-
-
-    @Deprecated
-    public ComponentName play(Class<? extends Service> serviceClass) {
-        Intent intent = new Intent(mContext , serviceClass);
-        return play(intent);
     }
 }

@@ -36,7 +36,7 @@ public abstract class CutinService extends Service {
     final public int onStartCommand(final Intent intent, final int flags, final int startId) {
         if (!mStarted && intent != null) {
             mStarted = true;
-            mEngine = onCreateEngine(intent ,intent.getLongExtra(CutinManagerUtils.EXTRA_ORDER_ID, -1));
+            mEngine = onCreateEngine(intent ,intent.getLongExtra(ManagerUtils.EXTRA_ORDER_ID, 0));
             if(mEngine == null){
                 finishCutin();
                 return START_NOT_STICKY;
