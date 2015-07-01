@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="cs_text_size_micro">10sp</dimen>
-    <dimen name="cs_text_size_small">13sp</dimen>
-    <dimen name="cs_text_size_medium">17sp</dimen>
-    <dimen name="cs_text_size_large">21sp</dimen>
-    <dimen name="cs_text_size_huge">28sp</dimen>
-    <dimen name="cs_text_size_dialog_button">15dp</dimen>
+    <dimen name="cp_text_size_micro">10sp</dimen>
+    <dimen name="cp_text_size_small">13sp</dimen>
+    <dimen name="cp_text_size_medium">17sp</dimen>
+    <dimen name="cp_text_size_large">21sp</dimen>
+    <dimen name="cp_text_size_huge">28sp</dimen>
+    <dimen name="cp_text_size_dialog_button">15dp</dimen>
 </resources>

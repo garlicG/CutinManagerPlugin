@@ -23,7 +23,7 @@
         <item name="cpDialogFrame">@drawable/cutin_dialog_light</item>
         <item name="cpTextColor">@color/cutin_text_light</item>
         <item name="cpCategoryTextColor">#686868</item>
-        <item name="cpCategoryBackground">@drawable/cutin_category_background_light</item>
+        <item name="cpCategoryBackground">@drawable/cutin_section_background_light</item>
         <item name="cpListChoiceIndicatorSingle">@drawable/cutin_btn_radio_holo_light</item>
         <item name="cpSelectorOverlay">@drawable/cutin_selector_overlay_light</item>
         <item name="cpDividerVertical">@drawable/cutin_divider_vertical_light</item>
@@ -34,7 +34,7 @@
         <item name="cpDialogFrame">@drawable/cutin_dialog_dark</item>
         <item name="cpTextColor">@color/cutin_text_dark</item>
         <item name="cpCategoryTextColor">#A8A8A8</item>
-        <item name="cpCategoryBackground">@drawable/cutin_category_background_dark</item>
+        <item name="cpCategoryBackground">@drawable/cutin_section_background_dark</item>
         <item name="cpListChoiceIndicatorSingle">@drawable/cutin_btn_radio_holo_dark</item>
         <item name="cpSelectorOverlay">@drawable/cutin_selector_overlay_dark</item>
         <item name="cpDividerVertical">@drawable/cutin_divider_vertical_dark</item>

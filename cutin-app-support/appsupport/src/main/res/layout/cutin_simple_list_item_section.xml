@@ -9,5 +9,5 @@
     android:paddingBottom="8dp"
     android:textColor="?attr/cpCategoryTextColor"
     android:textStyle="bold"
-    android:textSize="@dimen/cs_text_size_small"
+    android:textSize="@dimen/cp_text_size_small"
     android:background="?attr/cpCategoryBackground" />

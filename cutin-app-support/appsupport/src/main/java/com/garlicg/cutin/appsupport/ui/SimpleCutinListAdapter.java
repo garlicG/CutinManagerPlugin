@@ -24,8 +24,8 @@ public class SimpleCutinListAdapter extends ArrayAdapter<CutinItem> {
 
     public SimpleCutinListAdapter(Context context, List<CutinItem> objects , boolean checkable) {
         super(context, 0,objects);
-        mResourceId = R.layout.cp_simple_list_item;
-        mResourceCategoryId = R.layout.cp_simple_list_item_section;
+        mResourceId = R.layout.cutin_simple_list_item;
+        mResourceCategoryId = R.layout.cutin_simple_list_item_section;
         mInflater = LayoutInflater.from(context);
         mCheckable = checkable;
     }

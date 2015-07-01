@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textColor="?attr/cpTextColor"
-                android:textSize="@dimen/cs_text_size_medium"
+                android:textSize="@dimen/cp_text_size_medium"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -64,10 +64,10 @@
                 android:layout_width="0px"
                 android:layout_height="49dp"
                 android:layout_weight="1"
-                android:textSize="@dimen/cs_text_size_dialog_button"
+                android:textSize="@dimen/cp_text_size_dialog_button"
                 android:textColor="?attr/cpTextColor"
                 android:gravity="center"
-                android:text="@string/cutin_option" />
+                android:text="@string/cp_option" />
 
             <TextView
                 android:background="?attr/cpSelectorOverlay"
@@ -75,10 +75,10 @@
                 android:layout_width="0px"
                 android:layout_height="49dp"
                 android:layout_weight="1"
-                android:textSize="@dimen/cs_text_size_dialog_button"
+                android:textSize="@dimen/cp_text_size_dialog_button"
                 android:textColor="?attr/cpTextColor"
                 android:gravity="center"
-                android:text="@string/cutin_register" />
+                android:text="@string/cp_register" />
 
         </LinearLayout>
 

@@ -136,12 +136,12 @@ public abstract class CutinPanel extends FragmentActivity {
 
         @Override
         protected String getMessage() {
-            return getString(R.string.message_need_manager);
+            return getString(R.string.cp_message_need_manager);
         }
 
         @Override
         protected String getButton() {
-            return getString(R.string.download);
+            return getString(R.string.cp_download);
         }
 
         @Override
@@ -162,12 +162,12 @@ public abstract class CutinPanel extends FragmentActivity {
 
         @Override
         protected String getMessage() {
-            return getString(R.string.message_launch_manager);
+            return getString(R.string.cp_message_launch_manager);
         }
 
         @Override
         protected String getButton() {
-            return getString(R.string.launch);
+            return getString(R.string.cp_launch);
         }
 
         @Override

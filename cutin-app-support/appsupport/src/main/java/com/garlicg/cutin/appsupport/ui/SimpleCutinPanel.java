@@ -38,7 +38,7 @@ public abstract class SimpleCutinPanel extends CutinPanel implements AdapterView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.cp_simple_screen);
+        setContentView(R.layout.cutin_simple_screen);
 
         // title
         PackageManager pm = getPackageManager();
