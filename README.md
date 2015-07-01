@@ -1,48 +1,25 @@
-# CutinSupport
-Backport library for create CUT-IN App works on CUT-IN Manager.
+# CUT-IN Manager
+
+The [CUT-IN Manager](https://play.google.com/store/apps/details?id=com.garlicg.cutin) provides to show animation at the overlay layer.
 
 
-Gradle
---------
+# Definition
 
-```groovy
-
-repositories {
-    jcenter()
-}
-
- (...)
-
-dependencies {
-    compile 'com.garlicg:cutin-support:3.1.1'
-}
-
-```
+- CUT-IN : Cool animation of 500-2500ms. 
 
 
-Usage
---------
-Now preparing...
+# CUT-IN App
+
+[CutinAppSuport](https://github.com/garlicG/CutinManagerPlugin/tree/master/CutinAppSupport) provides to make individial CUT-IN App.
 
 
-API Level
+# Trigger Extension
+-----
+
+It is possible to add original trigger to the CUT-IN Manager from your app.  Please check [CutinTriggerExtension](https://github.com/garlicG/CutinManagerPlugin/tree/master/CutinTriggerExtension).
+
+
+# API Level
 -------
-CutinSupport works on API level 10+.
-
-License
--------
-
-    Copyright 2015 Takahiro GOTO
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+CUT-IN Manager and Plugins works on API level 10+.
 
