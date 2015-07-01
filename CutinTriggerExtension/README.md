@@ -1,6 +1,6 @@
-# CutinAppSupport
+# CutinTriggerExtension
 
-Supports to make CUT-IN App works on CUT-IN Manager.
+Supports to add trigger to the CUT-IN Manager.
 
 # Gradle
 
@@ -14,7 +14,7 @@ repositories {
  (...)
 
 dependencies {
-    compile 'com.garlicg:cutin-app-support:3.0.1'
+    compile 'com.garlicg:cutin-trigger-extension:0.9.0'
 }
 
 ```
@@ -22,14 +22,15 @@ dependencies {
 
 # API Level
 
-CutinAppSupport works on API level 10+.
+CutinTriggerExtension works on API level 10+.
 
 
 # License
 
 
     Copyright 2015 Takahiro GOTO
-
+    Copyright 2015 Hattsun
+    
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
@@ -41,4 +42,3 @@ CutinAppSupport works on API level 10+.
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
