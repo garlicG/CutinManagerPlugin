@@ -1,9 +1,9 @@
-# CutinSupport
-Backport library for create CUT-IN App works on CUT-IN Manager.
+# CutinAppSupport
 
+Supports to make CUT-IN App works on CUT-IN Manager.
 
-Gradle
---------
+# Gradle
+
 
 ```groovy
 
@@ -14,23 +14,19 @@ repositories {
  (...)
 
 dependencies {
-    compile 'com.garlicg:cutin-support:3.1.1'
+    compile 'com.garlicg:cutin-app-support:3.0.1'
 }
 
 ```
 
 
-Usage
---------
-Now preparing...
+# API Level
+
+CutinAppSupport works on API level 10+.
 
 
-API Level
--------
-CutinSupport works on API level 10+.
+# License
 
-License
--------
 
     Copyright 2015 Takahiro GOTO
 
