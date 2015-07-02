@@ -7,7 +7,7 @@ import android.view.Gravity;
 
 import com.garlicg.cutin.appsupport.CutinEngine;
 import com.garlicg.cutin.appsupport.CutinService;
-import com.garlicg.cutin.appsupport.TriggerInfo;
+import com.garlicg.cutin.appsupport.ContentOption;
 import com.garlicg.sample.cutinappsupport.engine.BannerEngine;
 import com.garlicg.sample.cutinappsupport.engine.GLSurfaceViewEngine;
 import com.garlicg.sample.cutinappsupport.engine.SampleEngine1;
@@ -55,7 +55,7 @@ public class SampleService extends CutinService{
             return new GLSurfaceViewEngine(this);
         }
         else {
-            TriggerInfo info = TriggerInfo.from(intent);
+            ContentOption info = ContentOption.from(intent);
             return null;
         }
     }

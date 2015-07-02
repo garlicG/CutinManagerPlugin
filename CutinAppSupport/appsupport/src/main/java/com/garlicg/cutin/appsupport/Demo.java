@@ -11,7 +11,7 @@ import android.content.Intent;
  */
 public class Demo {
 
-    private static final TriggerInfo DEFAULT_TRIGGER_INFO = TriggerInfo.emulate("TITLE" , "message");
+    private static final ContentOption DEFAULT_TRIGGER_INFO = ContentOption.emulate("TITLE", "message");
     private final Context mContext;
     private Intent mCutinIntent;
 
@@ -45,7 +45,7 @@ public class Demo {
         return play(getPlayIntent(
                 item.serviceClass ,
                 item.orderId ,
-                item.triggerInfo));
+                item.contentOption));
     }
 
     /**
@@ -53,16 +53,16 @@ public class Demo {
      *
      * @param cutinService Subclass of CutinService.
      * @param orderId Option id to specify the CUT-IN.
-     * @param triggerInfo May be null. Option value to emulate trigger's info.
+     * @param contentOption May be null. Option value to emulate cutin content.
      * @return Intent for show CUT-IN.
      */
-    public Intent getPlayIntent(Class<? extends Service> cutinService , long orderId , TriggerInfo triggerInfo){
+    public Intent getPlayIntent(Class<? extends Service> cutinService , long orderId , ContentOption contentOption){
         Intent intent = new Intent(mContext ,cutinService );
         intent.putExtra(ManagerUtils.EXTRA_ORDER_ID, orderId);
-        TriggerInfo target = triggerInfo != null ? triggerInfo : DEFAULT_TRIGGER_INFO;
-        intent.putExtra(ManagerUtils.EXTRA_TRIGGER_TYPE, target.type);
-        intent.putExtra(ManagerUtils.EXTRA_CONTENT_TITLE, target.contentMessage);
-        intent.putExtra(ManagerUtils.EXTRA_CONTENT_MESSAGE, target.contentTitle);
+        ContentOption target = contentOption != null ? contentOption : DEFAULT_TRIGGER_INFO;
+        intent.putExtra(ManagerUtils.EXTRA_TRIGGER_TYPE, target.triggerType);
+        intent.putExtra(ManagerUtils.EXTRA_CONTENT_TITLE, target.contentTitle);
+        intent.putExtra(ManagerUtils.EXTRA_CONTENT_MESSAGE, target.contentMessage);
         return intent;
     }
 
