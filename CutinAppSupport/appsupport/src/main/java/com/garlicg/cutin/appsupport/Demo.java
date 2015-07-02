@@ -61,8 +61,8 @@ public class Demo {
         intent.putExtra(ManagerUtils.EXTRA_ORDER_ID, orderId);
         ContentOption target = contentOption != null ? contentOption : DEFAULT_TRIGGER_INFO;
         intent.putExtra(ManagerUtils.EXTRA_TRIGGER_TYPE, target.triggerType);
-        intent.putExtra(ManagerUtils.EXTRA_CONTENT_TITLE, target.contentMessage);
-        intent.putExtra(ManagerUtils.EXTRA_CONTENT_MESSAGE, target.contentTitle);
+        intent.putExtra(ManagerUtils.EXTRA_CONTENT_TITLE, target.contentTitle);
+        intent.putExtra(ManagerUtils.EXTRA_CONTENT_MESSAGE, target.contentMessage);
         return intent;
     }
 
