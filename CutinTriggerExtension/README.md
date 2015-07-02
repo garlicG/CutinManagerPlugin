@@ -14,7 +14,7 @@ repositories {
  (...)
 
 dependencies {
-    compile 'com.garlicg:cutin-trigger-extension:0.9.0'
+    compile 'com.garlicg:cutin-trigger-extension:0.9.1'
 }
 
 ```
