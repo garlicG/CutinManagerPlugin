@@ -9,17 +9,17 @@ public class ContentOption {
      *
      * @see com.garlicg.cutin.appsupport.ManagerUtils#EXTRA_TRIGGER_TYPE
      */
-    public final int triggerType;
+    public int triggerType = ManagerUtils.TRIGGER_TYPE_DEMO;
 
     /**
      * TITLE of useful content for CUT-IN appearance from Trigger
      */
-    public final String contentTitle;
+    public String contentTitle = null;
 
     /**
      * MESSAGE of useful content for CUT-IN appearance from Trigger
      */
-    public final String contentMessage;
+    public String contentMessage = null;
 
     private ContentOption(int triggerType, String contentTitle, String contentMessage){
         this.triggerType = triggerType;
@@ -46,7 +46,7 @@ public class ContentOption {
     }
 
     public static ContentOption emulate(int type){
-        return emulate("" , "" , type);
+        return emulate(null , null , type);
     }
 
 }
