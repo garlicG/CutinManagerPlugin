@@ -1,3 +1,5 @@
+CutinManagerPlugin
+======================
 
 <img src="picture/anim/demo_jsg1.gif" width="33%">
 
@@ -29,14 +31,16 @@ Apps
 
 Please [send me](mailto://ggarlicg@gmail.com) information or create a pull request if you want to add a link into the CUT-IN Manager.
 
+CUT-IN Apps
 
-Icon | CUT-IN App | Developer
------------- | ------------- | -------------
+Icon | Name | Developer
+--- | --- | ---
 <img src="picture/icon/garlin3.png" width="72px"> | Garlin | GarlicBetterRices
+ 
+Trigger Extensions
 
-
-Icon | Trigger Extension | Developer
------------- | -------------
+Icon | Name | Developer
+--- | --- | ---
 <img src="picture/icon/alarmtrigger.png" width="72px"> | Alarm Trigger | GarlicBetterRices
 
 
