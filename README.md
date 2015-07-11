@@ -26,22 +26,23 @@ Trigger Extension Plugin
 [CutinTriggerExtension](https://github.com/garlicG/CutinManagerPlugin/tree/master/CutinTriggerExtension) is the development kit to add extention trigger to the CUT-IN Manager.
 
 
-Apps
+App links 
 -- 
 
-Please [send me](mailto://ggarlicg@gmail.com) information or create a pull request if you want to add a link into the CUT-IN Manager.
+The CUT-IN Manager has promotion area for plugins in app. Please [send me](mailto://ggarlicg@gmail.com) information or create a pull request if you want to add your app..
 
 CUT-IN Apps
 
-Icon | Name | Developer
---- | --- | ---
-<img src="picture/icon/garlin3.png" width="72px"> | Garlin | GarlicBetterRices
+Icon | App | Developer
+--- | --- | --- 
+<img src="picture/icon/garlin3.png" width="72px"> | [Garlin](https://play.google.com/store/apps/details?id=com.garlicg.sample.cutin) | GarlicBetterRices 
+
  
 Trigger Extensions
 
-Icon | Name | Developer
+Icon | App | Developer
 --- | --- | ---
-<img src="picture/icon/alarmtrigger.png" width="72px"> | Alarm Trigger | GarlicBetterRices
+<img src="picture/icon/alarmtrigger.png" width="72px"> | [Alarm Trigger](https://play.google.com/store/apps/details?id=com.garlicg.alarmtrigger) | GarlicBetterRices
 
 
 
@@ -54,6 +55,6 @@ CUT-IN Manager and Plugins work on API level 10+.
 Contents license
 --
 
-Some images are from Jewel Savior.
+Some of character images are from Jewel Savior.
 > JewelSaviorFree 
 > [http://www.jewel-s.jp/](http://www.jewel-s.jp/)
