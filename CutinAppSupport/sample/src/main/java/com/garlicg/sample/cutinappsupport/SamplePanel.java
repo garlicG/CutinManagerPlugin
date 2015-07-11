@@ -15,10 +15,12 @@ public class SamplePanel extends SimpleCutinPanel {
         super.onCreate(savedInstanceState);
 
         ArrayList<CutinItem> items = new ArrayList<>();
+        items.add(new SectionItem("Tutorial"));
+        items.add(new CutinItem(SampleService.class, "Sample1", SampleService.ORDER_SAMPLE));
         items.add(new SectionItem("Simple Samples"));
-        items.add(new CutinItem(SampleService.class, "Sample1", SampleService.ORDER_SAMPLE_1));
-        items.add(new CutinItem(SampleService.class, "Sample2", SampleService.ORDER_SAMPLE_2));
-        items.add(new CutinItem(SampleService.class, "Sample3", SampleService.ORDER_SAMPLE_3));
+        items.add(new CutinItem(SampleService.class, "Garlin1", SampleService.ORDER_GARLIN_1));
+        items.add(new CutinItem(SampleService.class, "Garlin2", SampleService.ORDER_GARLIN_2));
+        items.add(new CutinItem(SampleService.class, "Garlin3", SampleService.ORDER_GARLIN_3));
         items.add(new SectionItem("Engine Samples"));
         items.add(new CutinItem(SampleService.class, "Banner", SampleService.ORDER_BANNER));
         items.add(new CutinItem(SampleService.class, "Surface", SampleService.ORDER_SURFACE));

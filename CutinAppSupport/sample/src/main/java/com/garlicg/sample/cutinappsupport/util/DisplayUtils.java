@@ -12,11 +12,12 @@ public class DisplayUtils {
         return (int) (res.getDisplayMetrics().density * dp + 0.5f);
     }
 
-    @SuppressWarnings("deprecation")
     public static Point getWindowSize(Context context){
         WindowManager manager = (WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
         if(Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB_MR2){
+            //noinspection deprecation
             int width = manager.getDefaultDisplay().getWidth();
+            //noinspection deprecation
             int height = manager.getDefaultDisplay().getHeight();
             return new Point(width , height);
         }

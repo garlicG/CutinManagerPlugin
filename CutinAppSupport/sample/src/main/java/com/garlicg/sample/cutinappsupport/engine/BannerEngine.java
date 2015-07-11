@@ -58,7 +58,7 @@ public class BannerEngine extends CutinEngine{
     @SuppressLint("RtlHardcoded")
     @Override
     public View onCreateLayout(Context context) {
-        LayoutInflater inflater = LayoutInflater.from(getContext());
+        LayoutInflater inflater = LayoutInflater.from(context);
         View root = inflater.inflate(R.layout.engine_banner, null);
         mFrame = (FrameLayout)root.findViewById(R.id.frame);
         mLineTopBackView = root.findViewById(R.id.line_top_back);

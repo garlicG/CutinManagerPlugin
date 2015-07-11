@@ -15,10 +15,11 @@ import com.garlicg.cutin.appsupport.CutinEngine;
 import com.garlicg.cutin.appsupport.CutinService;
 import com.garlicg.sample.cutinappsupport.R;
 import com.garlicg.sample.cutinappsupport.util.AnimationListenerAdapter;
+import com.garlicg.sample.cutinappsupport.util.GravityUtils;
 
-public class SampleEngine3 extends CutinEngine{
+public class GarlinEngine3 extends CutinEngine{
 
-    public SampleEngine3(CutinService cutinService) {
+    public GarlinEngine3(CutinService cutinService) {
         super(cutinService);
     }
 
@@ -27,10 +28,9 @@ public class SampleEngine3 extends CutinEngine{
 
     @Override
     public View onCreateLayout(Context context) {
-        mLayout = LayoutInflater.from(getContext()).inflate(R.layout.engine_sample, null);
+        mLayout = LayoutInflater.from(getContext()).inflate(R.layout.engine_garlin, null);
         mImage = (ImageView) mLayout.findViewById(R.id.image);
-        FrameLayout.LayoutParams params = (FrameLayout.LayoutParams)mImage.getLayoutParams();
-        params.gravity = Gravity.BOTTOM| Gravity.LEFT;
+        GravityUtils.addFrameLayoutGravity(mImage , Gravity.BOTTOM | Gravity.LEFT);
         return mLayout;
     }
 

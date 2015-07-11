@@ -18,7 +18,7 @@ import com.garlicg.cutin.appsupport.CutinService;
 
 
 /**
- * Refactor From API Demo
+ * Refactored From API Demo
  */
 public class SurfaceViewEngine extends CutinEngine{
 
