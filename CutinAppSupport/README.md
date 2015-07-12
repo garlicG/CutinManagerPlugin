@@ -1,13 +1,17 @@
 # CutinAppSupport
 
-[ScreenShot1][ScreenShot2][ScreenShot3]
+
+<img src="../picture/anim/demo_garlin1.gif" width="33%"> <img src="../picture/anim/demo_garlin2.gif" width="33%">
 
 Supports to make CUT-IN App as the plugin of the CUT-IN Manager.
-Sample app on Google play [here]().
+
+Sample app on Google play [here]().[FIXME]
 
 # Quick Start For Android Studio
 
-[ScreenShot4]
+<img src="../picture/anim/demo_flow1.gif" width="33%"> <img src="../picture/anim/demo_flow2.gif" width="33%">
+
+
 
 Create a simple CUT-IN App which is the following configuration.
 
@@ -27,15 +31,9 @@ Create a new android project with choosing "Add No Activity".
 
 ```groovy
 
-repositories {
-    jcenter()
-}
-
- (...)
-
 dependencies {
     compile 'com.android.support:appcompat-v7:21.1.1'
-    compile 'com.garlicg:cutin-app-support:3.0.3'
+    compile 'com.garlicg:cutin-app-support:3.0.4'
 }
 
 ```
@@ -57,7 +55,7 @@ dependencies {
 
 `CutinEngine` is abstract class to set layout and show animation. You must to call `finishCutin()` when animation end.
 
-`SampleEngine.java`
+SampleEngine.java
 
 ```java
 
@@ -71,14 +69,14 @@ public class SampleEngine extends CutinEngine{
 
     @Override
     public View onCreateLayout(Context context) {
-        View layout = LayoutInflater.from(context).inflate(R.layout.garlic_tornado, null);
-        mImageView = (ImageView)layout.findViewById(R.id.garlic_tornado_Image);
-        return layout;
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View root = inflater.inflate(R.layout.engine_sample , null);
+        mImageView = (ImageView)root.findViewById(R.id.image);
+        return root;
     }
 
     @Override
     public void onStart() {
-
         int centerX = mImageView.getWidth()/2;
         int centerY = mImageView.getHeight()/2;
 
@@ -91,13 +89,13 @@ public class SampleEngine extends CutinEngine{
             }
 
             @Override
-            public void onAnimationEnd(Animation animation) {
-                // must finish cutin when end of anim
-                finishCutin();
+            public void onAnimationRepeat(Animation animation) {
             }
 
             @Override
-            public void onAnimationRepeat(Animation animation) {
+            public void onAnimationEnd(Animation animation) {
+                // must finish cutin when end of anim.
+                finishCutin();
             }
         });
 
@@ -106,58 +104,63 @@ public class SampleEngine extends CutinEngine{
 }
 ```
 
-`layout/engine_sample.xml`
+layout/engine_sample.xml
 
 ```xml 
 
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_gravity="center"
         android:src="@drawable/ic_launcher" />
 
-</RelativeLayout>
+</FrameLayout>
 ```
 
 
 5. Create CutinService
 --
 
-`SampleService.java`
+SampleService.java
 
 ```java
 
 public class SampleService extends CutinService {
-    public static final long SAMPLE = 0;    
+
+    public static final long ORDER_SAMPLE = 0;  
 
     @Override
     protected CutinEngine onCreateEngine(Intent intent, long orderId) {
-        if(orderId == SAMPLE){
+        if(orderId == ORDER_SAMPLE){
             return new SampleEngine(this);
         }
-        // can define other engine
-        else{
+         // can define other engine if need
+        else {
         }
+        
+        // stop service immediately and show nothing.
+        return null;
     }
 }
 ``` 
 
 
-`AndroidManifest.xml`
+AndroidManifest.xml
 
 ```xml
 
-<service android:name=".SampleService" >
-
+<service
+    android:name=".SampleService"
+    android:icon="@drawable/ic_launcher">
     <intent-filter>
-        <!-- action name must to be full path of CutinService class -->
-        <action android:name="sample.cutin.SampleService" />
+        <!-- action name must to be full path of Service Class -->
+        <action android:name="yourpackage.SampleService" />
     </intent-filter>
 </service>
 ```
@@ -167,14 +170,14 @@ public class SampleService extends CutinService {
 6. Create CutinPanel UI
 --
 
-`SimpleCutinPanel` is subclass of `Activity`. It has feature belows
+`SimpleCutinPanel` is subclass of `android.app.Activity`. It has feature belows
 
 - Light and Dark Panel Theme depends on CUT-IN Manager Theme.
 - Registration `CutinService`, `label` , and `orderId` to the CUT-IN Manager.
 - Controll CUT-IN Demo playing.
 
 
-`SamplePanel.java`
+SamplePanel.java
 
 ```java
 
@@ -195,11 +198,12 @@ public class SamplePanel extends SimpleCutinPanel{
 ```
 
 
-`AndroidManifest.xml`
+AndroidManifest.xml
 
 ```xml
 <activity
     android:name=".SamplePanel"
+    android:exported="true"
     android:theme="@style/CutinPanel"
     android:label="@string/app_name" >
 
@@ -210,13 +214,23 @@ public class SamplePanel extends SimpleCutinPanel{
         <category android:name="android.intent.category.DEFAULT" />
     </intent-filter>
 </activity>
+
+<!-- android:enabled - false do not show launcher icon -->
+<activity-alias
+    android:name=".LauncherActivityAlias"
+    android:enabled="false"
+    android:targetActivity=".SamplePanel">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity-alias>
 ```
 
 7. Confirmation
 --
 
 Launch the CUT-IN Manager and confirm to register and play CUT-IN.
-さらIf you want to improve app , CUT-IN App 
 
 
 # About UI
