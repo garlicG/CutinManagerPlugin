@@ -16,6 +16,7 @@ import com.garlicg.cutin.appsupport.CutinEngine;
 import com.garlicg.cutin.appsupport.CutinService;
 import com.garlicg.sample.cutinappsupport.R;
 import com.garlicg.sample.cutinappsupport.util.AnimationListenerAdapter;
+import com.garlicg.sample.cutinappsupport.util.ViewFinder;
 
 public class GarlinEngine1 extends CutinEngine{
 
@@ -28,7 +29,7 @@ public class GarlinEngine1 extends CutinEngine{
     @Override
     public View onCreateLayout(Context context) {
         View root = LayoutInflater.from(getContext()).inflate(R.layout.engine_garlin, null);
-        mImage = (ImageView) root.findViewById(R.id.image);
+        mImage = ViewFinder.byId(root, R.id.image);
         FrameLayout.LayoutParams params = (FrameLayout.LayoutParams)mImage.getLayoutParams();
         params.gravity = Gravity.CENTER;
         return root;

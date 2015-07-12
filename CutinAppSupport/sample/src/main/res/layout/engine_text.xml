@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:visibility="invisible"
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="#88000000"
+        android:orientation="vertical"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp">
+
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:shadowColor="#AA000000"
+            android:shadowDx="1.1"
+            android:shadowDy="1.1"
+            android:shadowRadius="1.5"
+            android:textColor="#FFF"
+            android:textSize="42dp" />
+
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:shadowColor="#AA000000"
+            android:shadowDx="1.1"
+            android:shadowDy="1.1"
+            android:shadowRadius="1.5"
+            android:textColor="#FFF"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</FrameLayout>

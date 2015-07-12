@@ -7,7 +7,7 @@ import android.view.Gravity;
 
 import com.garlicg.cutin.appsupport.CutinEngine;
 import com.garlicg.cutin.appsupport.CutinService;
-import com.garlicg.cutin.appsupport.ContentOption;
+import com.garlicg.cutin.appsupport.TriggerInfo;
 import com.garlicg.sample.cutinappsupport.engine.BannerEngine;
 import com.garlicg.sample.cutinappsupport.engine.GLSurfaceViewEngine;
 import com.garlicg.sample.cutinappsupport.engine.GarlinEngine1;
@@ -15,6 +15,7 @@ import com.garlicg.sample.cutinappsupport.engine.GarlinEngine2;
 import com.garlicg.sample.cutinappsupport.engine.GarlinEngine3;
 import com.garlicg.sample.cutinappsupport.engine.SampleEngine;
 import com.garlicg.sample.cutinappsupport.engine.SurfaceViewEngine;
+import com.garlicg.sample.cutinappsupport.engine.TextEngine;
 
 public class SampleService extends CutinService{
 
@@ -25,6 +26,7 @@ public class SampleService extends CutinService{
     public static final long ORDER_BANNER = 4;
     public static final long ORDER_SURFACE = 5;
     public static final long ORDER_GL_SURFACE = 6;
+    public static final long ORDER_TRIGGER_TEXT = 7;
 
     @Override
     @Nullable
@@ -46,7 +48,7 @@ public class SampleService extends CutinService{
         // engine samples
         else if(orderId == ORDER_BANNER){
             BannerEngine.Option option = new BannerEngine.Option();
-            option.text = "BANNER!";
+            option.text = "GARLIN!";
             option.textSizeDp = 32;
             option.textVerticalGravity = Gravity.BOTTOM;
             option.mainImageResource = R.drawable.garlin_180_120;
@@ -61,6 +63,11 @@ public class SampleService extends CutinService{
         }
         else if(orderId == ORDER_GL_SURFACE){
             return new GLSurfaceViewEngine(this);
+        }
+        // trigger info samples
+        else if(orderId == ORDER_TRIGGER_TEXT){
+            TriggerInfo info = TriggerInfo.from(intent , "SAMPLE" , "Trigger message here.");
+            return new TextEngine(this , info.contentTitle , info.contentMessage);
         }
         // can define other engine if need
         else {

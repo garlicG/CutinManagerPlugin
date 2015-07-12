@@ -18,6 +18,7 @@ import com.garlicg.sample.cutinappsupport.R;
 import com.garlicg.sample.cutinappsupport.util.AnimationListenerAdapter;
 import com.garlicg.sample.cutinappsupport.util.DisplayUtils;
 import com.garlicg.sample.cutinappsupport.util.GravityUtils;
+import com.garlicg.sample.cutinappsupport.util.ViewFinder;
 
 public class GarlinEngine2 extends CutinEngine{
 
@@ -31,7 +32,7 @@ public class GarlinEngine2 extends CutinEngine{
     @Override
     public View onCreateLayout(Context context) {
         mLayout = LayoutInflater.from(getContext()).inflate(R.layout.engine_garlin, null);
-        mImage = (ImageView) mLayout.findViewById(R.id.image);
+        mImage = ViewFinder.byId(mLayout , R.id.image);
         GravityUtils.addFrameLayoutGravity(mImage , Gravity.CENTER);
         return mLayout;
     }

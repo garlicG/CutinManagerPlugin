@@ -3,6 +3,7 @@ package com.garlicg.sample.cutinappsupport;
 import android.os.Bundle;
 
 import com.garlicg.cutin.appsupport.CutinItem;
+import com.garlicg.cutin.appsupport.TriggerInfo;
 import com.garlicg.cutin.appsupport.ui.SectionItem;
 import com.garlicg.cutin.appsupport.ui.SimpleCutinPanel;
 
@@ -25,6 +26,9 @@ public class SamplePanel extends SimpleCutinPanel {
         items.add(new CutinItem(SampleService.class, "Banner", SampleService.ORDER_BANNER));
         items.add(new CutinItem(SampleService.class, "Surface", SampleService.ORDER_SURFACE));
         items.add(new CutinItem(SampleService.class, "GLSurface", SampleService.ORDER_GL_SURFACE));
+        items.add(new SectionItem("Trigger Option"));
+        TriggerInfo info = TriggerInfo.from(getIntent() , "SAMPLE" , "Trigger message here.");
+        items.add(new CutinItem(SampleService.class, "TriggerText", SampleService.ORDER_TRIGGER_TEXT , info));
 
         setCutinItems(items);
     }
