@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.garlicg.sample.cutinappsupport">
 
-
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
@@ -10,17 +9,14 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
+
         <activity
-            android:name="com.garlicg.sample.cutinappsupport.SamplePanel"
+            android:name=".SamplePanel"
+            android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/CutinPanel">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
+            <!-- For CUT-IN Manager -->
             <intent-filter>
                 <action android:name="com.garlicg.cutin.action.PICK" />
 
@@ -29,11 +25,22 @@
             </intent-filter>
         </activity>
 
-        <service
-            android:name="com.garlicg.sample.cutinappsupport.SampleService"
-            android:icon="@drawable/ic_launcher"
-            android:process=".CutinSample">
+        <!-- android:enabled - false do not show launcher icon -->
+        <activity-alias
+            android:name=".EmptyActivity"
+            android:enabled="false"
+            android:targetActivity=".SamplePanel">
             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <service
+            android:name=".SampleService"
+            android:icon="@drawable/ic_launcher">
+            <intent-filter>
+                <!-- action name must to be full path of Service Class -->
                 <action android:name="com.garlicg.sample.cutinappsupport.SampleService" />
             </intent-filter>
         </service>

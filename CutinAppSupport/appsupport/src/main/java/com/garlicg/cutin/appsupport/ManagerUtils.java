@@ -51,51 +51,17 @@ public class ManagerUtils {
     public final static String EXTRA_PACKAGE ="com.garlicg.cutin.extra.PACKAGE";
 
     /**
-     * CutinManager save CUTIN-ID and send it to CUTIN App when trigger fire.
-     * Panel -> Manager
-     * Manager -> CutinService
+     * CutinManager save ORDER_ID and send it when trigger fire.
+     * Panel -(ORDER_ID)-> Manager
+     * Manager -(ORDER_ID)-> CutinService
      */
     public final static String EXTRA_ORDER_ID ="cutin_id";
+
+    public final static long DEFAULT_ORDER_ID = 0;
 
     @Deprecated
     public final static String EXTRA_CUTIN_ID ="cutin_id";
 
-
-    /**
-     * TRIGGER_TYPE_DEMO : Demo on CUT-IN App or Unknown trigger
-     * TRIGGER_TYPE_EXTENSION : Trigger from Extension Trigger Plugin.
-     * TRIGGER_TYPE_OTHER : Basic Trigger of CUT-IN Manager.
-     */
-    public final static String EXTRA_TRIGGER_TYPE ="trigger_id";
-
-    public final static int TRIGGER_TYPE_EXTENSION = -2;
-    public final static int TRIGGER_TYPE_DEMO = -1;
-    public final static int TRIGGER_TYPE_SCREEN_ON = 0;
-    public static final int TRIGGER_TYPE_SCREEN_UNLOCK = 6;
-    public final static int TRIGGER_TYPE_CHARGE_ON = 1;
-    public final static int TRIGGER_TYPE_HEAD_SET_ON = 2;
-    public final static int TRIGGER_TYPE_DATE_CHANGED = 3;
-    public final static int TRIGGER_TYPE_LOW_BATTERY = 4;
-    public static final int TRIGGER_TYPE_MOBILE_NETWORK_CONNECTED = 7;
-    public static final int TRIGGER_TYPE_WIFI_CONNECTED = 8;
-    public static final int TRIGGER_TYPE_BLUETOOTH_ON = 9;
-    public static final int TRIGGER_TYPE_GPS_ON = 10;
-    public static final int TRIGGER_TYPE_RINGER_MODE_VIBRATE_ON = 11;
-    public static final int TRIGGER_TYPE_RINGER_MODE_SILENT_ON = 12;
-    public static final int TRIGGER_TYPE_AIRPLANE_MODE_ON = 13;
-    public static final int TRIGGER_TYPE_PACKAGE_ADDED = 14;
-    public static final int TRIGGER_TYPE_PACKAGE_REMOVED = 15;
-    public final static int TRIGGER_TYPE_NOTIFICATION = 5;
-
-    /**
-     * TEXT of useful content for CUT-IN appearance from Trigger. it may be English.
-     */
-    public static final String EXTRA_CONTENT_TITLE ="com.garlicg.cutin.extra.CONTENT_TITLE";
-
-    /**
-     * TEXT of useful content for CUT-IN appearance from Trigger. it may be English.
-     */
-    public static final String EXTRA_CONTENT_MESSAGE ="com.garlicg.cutin.extra.CONTENT_MESSAGE";
 
     /**
      * Ui Theme of the CUT-IN Manager.

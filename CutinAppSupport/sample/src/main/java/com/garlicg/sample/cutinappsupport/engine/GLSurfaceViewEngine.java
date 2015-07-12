@@ -28,7 +28,7 @@ import com.garlicg.cutin.appsupport.CutinService;
 
 
 /**
- * Refactor From API Demo
+ * Refactored From API Demo
  *
  * Wrapper engine demonstrating the use of {@link GLSurfaceView} to
  * display translucent 3D graphics.

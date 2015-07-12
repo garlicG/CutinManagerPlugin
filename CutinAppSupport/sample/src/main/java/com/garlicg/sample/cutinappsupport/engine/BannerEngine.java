@@ -22,6 +22,7 @@ import com.garlicg.sample.cutinappsupport.R;
 import com.garlicg.sample.cutinappsupport.util.AnimationListenerAdapter;
 import com.garlicg.sample.cutinappsupport.util.DisplayUtils;
 import com.garlicg.sample.cutinappsupport.util.GravityUtils;
+import com.garlicg.sample.cutinappsupport.util.ViewFinder;
 
 public class BannerEngine extends CutinEngine{
 
@@ -58,17 +59,17 @@ public class BannerEngine extends CutinEngine{
     @SuppressLint("RtlHardcoded")
     @Override
     public View onCreateLayout(Context context) {
-        LayoutInflater inflater = LayoutInflater.from(getContext());
+        LayoutInflater inflater = LayoutInflater.from(context);
         View root = inflater.inflate(R.layout.engine_banner, null);
-        mFrame = (FrameLayout)root.findViewById(R.id.frame);
-        mLineTopBackView = root.findViewById(R.id.line_top_back);
-        mLineTopFrontView = root.findViewById(R.id.line_top_front);
-        mLineBottomBackView = root.findViewById(R.id.line_bottom_back);
-        mLineBottomFrontView = root.findViewById(R.id.line_bottom_front);
-        mBackgroundView = root.findViewById(R.id.background);
-        mShadowImage = (ImageView)root.findViewById(R.id.image_shadow);
-        mMainImage = (ImageView)root.findViewById(R.id.image);
-        mLogoText = (TextView)root.findViewById(R.id.logo);
+        mFrame = ViewFinder.byId(root, R.id.frame);
+        mLineTopBackView = ViewFinder.byId(root, R.id.line_top_back);
+        mLineTopFrontView = ViewFinder.byId(root,R.id.line_top_front);
+        mLineBottomBackView = ViewFinder.byId(root,R.id.line_bottom_back);
+        mLineBottomFrontView = ViewFinder.byId(root,R.id.line_bottom_front);
+        mBackgroundView = ViewFinder.byId(root,R.id.background);
+        mShadowImage = ViewFinder.byId(root,R.id.image_shadow);
+        mMainImage = ViewFinder.byId(root,R.id.image);
+        mLogoText = ViewFinder.byId(root,R.id.logo);
 
         // prepare from option
         final Option option = mOption;

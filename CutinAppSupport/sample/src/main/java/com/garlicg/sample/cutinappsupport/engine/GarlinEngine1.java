@@ -16,23 +16,23 @@ import com.garlicg.cutin.appsupport.CutinEngine;
 import com.garlicg.cutin.appsupport.CutinService;
 import com.garlicg.sample.cutinappsupport.R;
 import com.garlicg.sample.cutinappsupport.util.AnimationListenerAdapter;
+import com.garlicg.sample.cutinappsupport.util.ViewFinder;
 
-public class SampleEngine1 extends CutinEngine{
+public class GarlinEngine1 extends CutinEngine{
 
-    public SampleEngine1(CutinService cutinService) {
+    public GarlinEngine1(CutinService cutinService) {
         super(cutinService);
     }
 
     private ImageView mImage;
-    private View mLayout;
 
     @Override
     public View onCreateLayout(Context context) {
-        mLayout = LayoutInflater.from(getContext()).inflate(R.layout.engine_sample, null);
-        mImage = (ImageView) mLayout.findViewById(R.id.image);
+        View root = LayoutInflater.from(getContext()).inflate(R.layout.engine_garlin, null);
+        mImage = ViewFinder.byId(root, R.id.image);
         FrameLayout.LayoutParams params = (FrameLayout.LayoutParams)mImage.getLayoutParams();
         params.gravity = Gravity.CENTER;
-        return mLayout;
+        return root;
     }
 
     @Override
@@ -58,7 +58,7 @@ public class SampleEngine1 extends CutinEngine{
         tornado.addAnimation(rotateMain);
 
         // out
-        RotateAnimation rotateOut = new RotateAnimation(0, -1080, mImage.getWidth() / 2, mImage.getHeight() / 2);
+        RotateAnimation rotateOut = new RotateAnimation(0, -1080, centerX, centerY);
         rotateOut.setDuration(600);
         rotateOut.setStartOffset(1200);
         tornado.addAnimation(rotateOut);
