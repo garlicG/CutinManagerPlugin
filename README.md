@@ -9,9 +9,11 @@ Definition
 CUT-IN Manager
 --
 
-<img src="picture/anim/demo_jsg1.gif" width="33%"> <img src="picture/anim/demo_meteor.gif" width="33%">
+<img src="picture/anim/demo_meteor.gif" width="33%">
 
 The [CUT-IN Manager app](https://play.google.com/store/apps/details?id=com.garlicg.cutin) supports to show CUT-IN in response to various triggers.
+
+> character image is from "JewelSaviorFree" http://www.jewel-s.jp/
 
 
 CUT-IN App Plugin
@@ -50,11 +52,3 @@ API Level
 --
 
 CUT-IN Manager and Plugins work on API level 10+.
-
-
-Contents license
---
-
-Some of character images are from Jewel Savior.
-> JewelSaviorFree 
-> [http://www.jewel-s.jp/](http://www.jewel-s.jp/)
