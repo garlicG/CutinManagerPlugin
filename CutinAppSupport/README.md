@@ -15,7 +15,7 @@ Sample app on Google play [here]().[FIXME]
 
 Create a simple CUT-IN App which is the following configuration.
 
-- `CutinEngine` for simple animation.
+- `CutinEngine` for simple animation using ic-launcher.
 - `CutinService` to controll `CutinEngine`.
 - `CutinPanel UI` works with the CUT-IN Manager.
 
@@ -50,7 +50,7 @@ dependencies {
 
 
 
-4. Create CutinEngine
+4. Create CutinEngine for simple animation
 --
 
 `CutinEngine` is abstract class to set layout and show animation. You must to call `finishCutin()` when animation end.
@@ -124,7 +124,7 @@ layout/engine_sample.xml
 ```
 
 
-5. Create CutinService
+5. Create CutinService to controll CutinEngine
 --
 
 SampleService.java
