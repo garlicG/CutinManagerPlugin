@@ -1,8 +1,6 @@
 CutinManagerPlugin
 ======================
 
-<img src="picture/anim/demo_jsg1.gif" width="33%">
-
 Definition
 --
 
@@ -10,6 +8,8 @@ Definition
 
 CUT-IN Manager
 --
+
+<img src="picture/anim/demo_jsg1.gif" width="33%"> <img src="picture/anim/demo_meteor.gif" width="33%">
 
 The [CUT-IN Manager app](https://play.google.com/store/apps/details?id=com.garlicg.cutin) supports to show CUT-IN in response to various triggers.
 
