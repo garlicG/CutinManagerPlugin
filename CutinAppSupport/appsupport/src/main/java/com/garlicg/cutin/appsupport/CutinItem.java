@@ -21,14 +21,14 @@ public class CutinItem {
     public final String cutinName;
 
     /**
-     * Option id to specify the CUT-IN.
+     * Order id for specify the CUT-IN.
      */
     public long orderId = 0;
 
     /**
      * May be null. Option value to emulate cutin content.
      */
-    public ContentOption contentOption;
+    public TriggerInfo triggerInfo;
 
     /**
      * @param serviceClass Subclass of CutinService.
@@ -55,11 +55,11 @@ public class CutinItem {
      * @param serviceClass Subclass of CutinService.
      * @param cutinName Cutin name to show on UI.
      * @param orderId Option id to specify the CUT-IN. Default is 0.
-     * @param demoContentOption May be null. Option value to emulate cutin content.
+     * @param demoTriggerInfo May be null. Option value to emulate cutin content.
      */
-    public CutinItem(Class<? extends Service> serviceClass,String cutinName, long orderId, ContentOption demoContentOption) {
+    public CutinItem(Class<? extends Service> serviceClass,String cutinName, long orderId, TriggerInfo demoTriggerInfo) {
         this(serviceClass, cutinName , orderId);
-        contentOption = demoContentOption;
+        triggerInfo = demoTriggerInfo;
     }
 
     @Override

@@ -11,7 +11,7 @@ import android.content.Intent;
  */
 public class Demo {
 
-    private static final ContentOption DEFAULT_TRIGGER_INFO = ContentOption.emulate("TITLE", "message");
+    private static final TriggerInfo DEFAULT_TRIGGER_INFO = TriggerInfo.emulate("TITLE", "message");
     private final Context mContext;
     private Intent mCutinIntent;
 
@@ -34,7 +34,7 @@ public class Demo {
     public ComponentName play(Class<? extends Service> serviceClass) {
         return play(getPlayIntent(
                 serviceClass,
-                0,
+                ManagerUtils.DEFAULT_ORDER_ID,
                 null));
     }
 
@@ -45,7 +45,7 @@ public class Demo {
         return play(getPlayIntent(
                 item.serviceClass ,
                 item.orderId ,
-                item.contentOption));
+                item.triggerInfo));
     }
 
     /**
@@ -53,16 +53,16 @@ public class Demo {
      *
      * @param cutinService Subclass of CutinService.
      * @param orderId Option id to specify the CUT-IN.
-     * @param contentOption May be null. Option value to emulate cutin content.
+     * @param triggerInfo May be null. Option value to emulate cutin content.
      * @return Intent for show CUT-IN.
      */
-    public Intent getPlayIntent(Class<? extends Service> cutinService , long orderId , ContentOption contentOption){
+    public Intent getPlayIntent(Class<? extends Service> cutinService , long orderId , TriggerInfo triggerInfo){
         Intent intent = new Intent(mContext ,cutinService );
         intent.putExtra(ManagerUtils.EXTRA_ORDER_ID, orderId);
-        ContentOption target = contentOption != null ? contentOption : DEFAULT_TRIGGER_INFO;
-        intent.putExtra(ManagerUtils.EXTRA_TRIGGER_TYPE, target.triggerType);
-        intent.putExtra(ManagerUtils.EXTRA_CONTENT_TITLE, target.contentTitle);
-        intent.putExtra(ManagerUtils.EXTRA_CONTENT_MESSAGE, target.contentMessage);
+        TriggerInfo target = triggerInfo != null ? triggerInfo : DEFAULT_TRIGGER_INFO;
+        intent.putExtra(TriggerInfo.EXTRA_TRIGGER_TYPE, target.type);
+        intent.putExtra(TriggerInfo.EXTRA_CONTENT_TITLE, target.contentTitle);
+        intent.putExtra(TriggerInfo.EXTRA_CONTENT_MESSAGE, target.contentMessage);
         return intent;
     }
 

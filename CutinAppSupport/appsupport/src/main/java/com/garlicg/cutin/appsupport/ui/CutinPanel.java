@@ -19,6 +19,7 @@ import com.garlicg.cutin.appsupport.CutinItem;
 import com.garlicg.cutin.appsupport.ManagerUtils;
 import com.garlicg.cutin.appsupport.Demo;
 import com.garlicg.cutin.appsupport.R;
+import com.garlicg.cutin.appsupport.TriggerInfo;
 
 /**
  * Base Panel Activity
@@ -27,7 +28,7 @@ import com.garlicg.cutin.appsupport.R;
 public abstract class CutinPanel extends FragmentActivity {
 
     private boolean mCalledFromManager;
-    private int mTriggerId;
+    private int mTriggerType;
 
     private Demo mDemo;
     protected Demo getDemo(){
@@ -44,7 +45,7 @@ public abstract class CutinPanel extends FragmentActivity {
         setTheme(resolveDialogThemeResource(cmTheme));
 
         // trigger id from cutin manager
-        mTriggerId = getIntent().getIntExtra(ManagerUtils.EXTRA_TRIGGER_TYPE, ManagerUtils.TRIGGER_TYPE_DEMO);
+        mTriggerType = getIntent().getIntExtra(TriggerInfo.EXTRA_TRIGGER_TYPE, TriggerInfo.TRIGGER_TYPE_DEMO);
 
         // flag of called from manager?
         mCalledFromManager = ManagerUtils.isCalledFromManager(intent);
@@ -119,8 +120,8 @@ public abstract class CutinPanel extends FragmentActivity {
         }
     }
 
-    public int getTriggerId(){
-        return mTriggerId;
+    public int getTriggerType(){
+        return mTriggerType;
     }
 
 
