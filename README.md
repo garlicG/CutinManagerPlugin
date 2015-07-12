@@ -5,13 +5,14 @@ Definition
 --
 
 - CUT-IN : Momentary animation of about 1000-2000ms. 
+- CUT-IN App: A plugin app for display CUT-INs.
 
 CUT-IN Manager
 --
 
 <img src="picture/anim/demo_meteor.gif" width="33%">
 
-The [CUT-IN Manager app](https://play.google.com/store/apps/details?id=com.garlicg.cutin) supports to show CUT-IN in response to various triggers.
+The [CUT-IN Manager](https://play.google.com/store/apps/details?id=com.garlicg.cutin) supports to show CUT-IN in response to various triggers.
 
 > character image is from "JewelSaviorFree" http://www.jewel-s.jp/
 
@@ -31,7 +32,7 @@ Trigger Extension Plugin
 App links 
 -- 
 
-The CUT-IN Manager has promotion area for plugins in app. Please [send me](mailto://ggarlicg@gmail.com) information or create a pull request if you want to add your app..
+The CUT-IN Manager has link area for plugins. Please [send me](mailto://cut-info@gunew.jp) information or create a pull request if you created app.
 
 CUT-IN Apps
 
