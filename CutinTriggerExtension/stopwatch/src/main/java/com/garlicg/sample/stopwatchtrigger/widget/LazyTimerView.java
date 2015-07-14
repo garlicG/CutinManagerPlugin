@@ -26,10 +26,19 @@ import android.view.View;
 
 import com.garlicg.sample.stopwatchtrigger.util.DisplayUtils;
 
+import java.util.Collection;
+import java.util.List;
+
+
+/**
+ * Instant timer view for this sample app.
+ *
+ * @author garlicG
+ */
 public class LazyTimerView extends View{
 
     private static final char[] NUM_SET = new char[]{'0','1','2','3','4','5','6','7','8','9'};
-    private final char[] mTimeText = new char[]{'0','0',':','0','0',':','0','0','0'};
+    private final char[] mTimeText = new char[]{'0','0',':','0','0','.','0','0','0'};
 
 
     public LazyTimerView(Context context) {
@@ -103,10 +112,16 @@ public class LazyTimerView extends View{
         return mRunning;
     }
 
-    public void start(){
+    /**
+     *
+     * @return Initial staring or not
+     */
+    public boolean start(){
         mStartTime = System.currentTimeMillis() - mAdditionalTime;
         mRunning = true;
         invalidate();
+
+        return mAdditionalTime == 0;
     }
 
     public void pause(){
@@ -169,6 +184,7 @@ public class LazyTimerView extends View{
     private OnTimePassListener mTimePassListener;
     private long[] mTimePassSet;
     private long mLastTime = 0;
+
 
     public void setOnTimePassListener(OnTimePassListener listener , long[] time){
         if(listener != null && (time == null || time.length == 0)){

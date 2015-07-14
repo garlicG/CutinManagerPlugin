@@ -8,6 +8,9 @@ import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.view.WindowManager;
 
+/**
+ * @author garlicG
+ */
 public class DisplayUtils {
 	
 	@SuppressWarnings("deprecation")

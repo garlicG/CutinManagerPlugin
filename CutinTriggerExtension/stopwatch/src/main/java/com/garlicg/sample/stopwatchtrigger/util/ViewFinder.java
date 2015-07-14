@@ -3,6 +3,9 @@ package com.garlicg.sample.stopwatchtrigger.util;
 import android.app.Activity;
 import android.view.View;
 
+/**
+ * @author garlicG
+ */
 public class ViewFinder {
 
     public static <T extends View> T id(View view , int id){
