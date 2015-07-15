@@ -38,7 +38,6 @@ public interface TriggerSetting {
      *
      * @return trigger name
      */
-    @Nullable
     String getTriggerName();
 
     /**
@@ -80,7 +79,6 @@ public interface TriggerSetting {
          * @return trigger name
          * @see TriggerSetting#getTriggerName()
          */
-        @Nullable
         public abstract String getTriggerName(@NonNull E e);
 
         /**
@@ -115,7 +113,6 @@ public interface TriggerSetting {
             return setting.getId();
         }
 
-        @Nullable
         @Override
         public String getTriggerName(@NonNull TriggerSetting setting) {
             return setting.getTriggerName();

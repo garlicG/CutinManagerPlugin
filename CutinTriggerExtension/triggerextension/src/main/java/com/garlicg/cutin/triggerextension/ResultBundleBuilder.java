@@ -124,7 +124,7 @@ public class ResultBundleBuilder {
      * @return this
      * @see TriggerSetting
      */
-    public ResultBundleBuilder add(Collection<TriggerSetting> settings) {
+    public ResultBundleBuilder addAll(Collection<TriggerSetting> settings) {
         if (settings != null && !settings.isEmpty()) {
             mPreSet.getList().addAll(settings);
         }
