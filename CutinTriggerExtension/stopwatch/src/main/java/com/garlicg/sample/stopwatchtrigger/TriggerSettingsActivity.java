@@ -37,7 +37,7 @@ public class TriggerSettingsActivity extends Activity implements AdapterView.OnI
 
         // Create all trigger list this app has.
         ArrayList<TriggerSetting> list = new ArrayList<>();
-        String contentMessageHint = "Hint message from Stop Watch.";
+        String contentMessageHint = "Hint message from Stopwatch.";
         list.add(new TriggerObject(TriggerObject.TRIGGER_ID_START, "Time Start" , "START!" , contentMessageHint));
         list.add(new TriggerObject(TriggerObject.TRIGGER_ID_3S, "3 Second", "3Sec!", contentMessageHint));
         list.add(new TriggerObject(TriggerObject.TRIGGER_ID_10S, "10 Second" , "10Sec!" , contentMessageHint));

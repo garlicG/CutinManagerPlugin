@@ -97,7 +97,7 @@ public class LauncherActivity extends Activity implements LazyTimerView.OnTimePa
 
         FireIntentBuilder builder = new FireIntentBuilder(this, triggerId);
         builder.setContentTitle(contentTitle);
-        builder.setContentMessage("Message from StopWatch");
+        builder.setContentMessage("Message from Stopwatch");
         builder.sendBroadcast(this);
 
         Log.i(TAG, "send trigger:" + Long.toString(triggerId));
