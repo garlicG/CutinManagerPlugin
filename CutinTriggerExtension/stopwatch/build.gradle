@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat
+
 apply plugin: 'com.android.application'
 
 android {
@@ -15,6 +17,17 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    applicationVariants.all { variant ->
+        if (variant.buildType.name.equals("release")) {
+            variant.outputs.each { output ->
+                String d = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date())
+                String newName = "StopWatch_r${defaultConfig.versionCode}_v${defaultConfig.versionName}_${d}.apk"
+                File file = output.outputFile
+                output.outputFile = new File(file, newName)
+            }
         }
     }
 }
