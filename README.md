@@ -12,9 +12,11 @@ CUT-IN Manager
 
 <img src="picture/anim/demo_meteor.gif" width="33%">
 
+> character image is from "JewelSaviorFree" http://www.jewel-s.jp/
+
 The [CUT-IN Manager](https://play.google.com/store/apps/details?id=com.garlicg.cutin) supports to show CUT-IN in response to various triggers.
 
-> character image is from "JewelSaviorFree" http://www.jewel-s.jp/
+
 
 
 CUT-IN App Plugin
