@@ -15,9 +15,9 @@ import com.garlicg.cutin.triggerextension.TriggerSetting;
 import java.util.ArrayList;
 
 /**
- * This Activity be called from CUT-IN Manager.
+ * This Activity is called from CUT-IN Manager.
  *
- * Declare belows as Trigger Settings
+ * Declare belows as settings feature.
  *
  * 1. Create chooser of all triggers.
  * 2. Return enable triggers.

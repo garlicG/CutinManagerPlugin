@@ -1,6 +1,5 @@
 package com.garlicg.sample.stopwatchtrigger.util;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Point;
@@ -13,20 +12,18 @@ import android.view.WindowManager;
  */
 public class DisplayUtils {
 	
-	@SuppressWarnings("deprecation")
-	@SuppressLint("NewApi")
 	public static Point getWindowSize(Context context){
-		WindowManager manager = (WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
+		WindowManager wm = (WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
 		Point outSize = new Point();
 		if(VERSION.SDK_INT < VERSION_CODES.HONEYCOMB_MR2){
-			int height = manager.getDefaultDisplay().getHeight();
-			int width = manager.getDefaultDisplay().getWidth();
-			outSize.x = width;
-			outSize.y = height;
+			//noinspection deprecation
+			outSize.x = wm.getDefaultDisplay().getWidth();
+			//noinspection deprecation
+			outSize.y = wm.getDefaultDisplay().getHeight();
 			return outSize;
 		}
 		else{
-			manager.getDefaultDisplay().getSize(outSize);
+			wm.getDefaultDisplay().getSize(outSize);
 			return outSize;
 		}
 	}

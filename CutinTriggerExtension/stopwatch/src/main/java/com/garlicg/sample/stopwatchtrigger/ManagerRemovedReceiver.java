@@ -8,7 +8,7 @@ import android.net.Uri;
 import com.garlicg.cutin.triggerextension.TriggerConst;
 
 /**
- * Receiver for inactive trigger settings if CUT-IN Manager removed.
+ * Receiver to inactive trigger settings when CUT-IN Manager removed.
  *
  * @author garlicG
  */
@@ -23,7 +23,7 @@ public class ManagerRemovedReceiver extends BroadcastReceiver {
 
         if(TriggerConst.MANAGER_PACKAGE.equals(getPackageName(intent))){
 
-            // Inactive trigger settings.
+            // Disable all trigger settings.
             MyPreferences prefs = new MyPreferences(context);
             prefs.clearEnableTriggers();
         }

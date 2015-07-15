@@ -16,7 +16,8 @@ import com.garlicg.sample.stopwatchtrigger.widget.LazyTimerView;
 
 /**
  * Launcher Activity
- * Simple stop watch is main feature.
+ *
+ * Main feature is Stop Watch. It is possible to send registered trigger to the CUT-IN Manager.
  *
  * @author garlicG
  */
@@ -48,12 +49,12 @@ public class LauncherActivity extends Activity implements LazyTimerView.OnTimePa
 
 
     public void onStartStopClick(View view){
-        // stop
+        // From running state to pause state.
         if(mTimerView.isRunning()){
             mTimerView.pause();
             mStartStopView.setText("Start");
         }
-        // start
+        // To running state.
         else {
             boolean isInitialStart = mTimerView.start();
             mStartStopView.setText("Stop");

@@ -19,11 +19,18 @@ public class TriggerObject implements TriggerSetting{
     private final String mContentTitle;
     private final String mContentMessage;
 
-    public TriggerObject(long triggerId, String label, String contentTitle, String contentMessage) {
+    /**
+     *
+     * @param triggerId Unique value in this app.
+     * @param triggerName  Trigger Name.
+     * @param contentTitleHint CUT-IN App can handle contentTitleHint as a content ingredient at the time of demo playback. When contentTitleHint is not defined , application label is substituted for it.
+     * @param contentMessageHint CUT-IN App can handle contentMessageHint as a content ingredient at the time of demo playback. When contentMessageHint is not defined , TriggerName substituted for it.
+     */
+    public TriggerObject(long triggerId, String triggerName, @Nullable String contentTitleHint, @Nullable String contentMessageHint) {
         mTriggerId = triggerId;
-        mLabel = label;
-        mContentTitle = contentTitle;
-        mContentMessage = contentMessage;
+        mLabel = triggerName;
+        mContentTitle = contentTitleHint;
+        mContentMessage = contentMessageHint;
     }
 
     @Override

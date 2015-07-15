@@ -26,12 +26,9 @@ import android.view.View;
 
 import com.garlicg.sample.stopwatchtrigger.util.DisplayUtils;
 
-import java.util.Collection;
-import java.util.List;
-
 
 /**
- * Instant timer view for this sample app.
+ * Instant timer view for sample Stop Watch..
  *
  * @author garlicG
  */
@@ -175,7 +172,7 @@ public class LazyTimerView extends View{
 
 
     /////////////////////
-    // time callback
+    // time pass callback
 
     public interface OnTimePassListener{
         void onTimePassed(long time);

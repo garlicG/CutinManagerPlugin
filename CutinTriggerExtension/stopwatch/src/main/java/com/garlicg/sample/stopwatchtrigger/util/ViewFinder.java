@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.view.View;
 
 /**
+ * Shorten doing cast of object by findViewById.
+ *
  * @author garlicG
  */
 public class ViewFinder {
