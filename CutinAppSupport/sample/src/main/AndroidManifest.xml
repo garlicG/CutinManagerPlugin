@@ -25,10 +25,11 @@
             </intent-filter>
         </activity>
 
-        <!-- android:enabled - false: do not show launcher icon -->
+        <!-- For main launcher.
+        if you want to hide launcher icon , set android:enabled = false -->
         <activity-alias
             android:name=".EmptyActivity"
-            android:enabled="false"
+            android:enabled="true"
             android:targetActivity=".SamplePanel">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
