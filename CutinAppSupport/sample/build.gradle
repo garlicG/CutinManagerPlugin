@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat
+
 apply plugin: 'com.android.application'
 
 
@@ -18,11 +20,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    applicationVariants.all { variant ->
+        if (variant.buildType.name.equals("release")) {
+            variant.outputs.each { output ->
+                String d = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date())
+                String newName = "SampleCutin_r${defaultConfig.versionCode}_v${defaultConfig.versionName}_${d}.apk"
+                File file = output.outputFile
+                output.outputFile = new File(file, newName)
+            }
+        }
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.1.1'
-//    compile 'com.garlicg:cutin-app-support:3.0.3'
     compile project(':appsupport')
 }
