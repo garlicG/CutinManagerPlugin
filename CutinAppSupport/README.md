@@ -1,23 +1,23 @@
 # CutinAppSupport
 
 
-<img src="../picture/anim/demo_garlin1.gif" width="33%"> <img src="../picture/anim/demo_garlin2.gif" width="33%">
+<img src="../picture/anim/demo_garlin1.gif" width="33%"> <img src="../picture/anim/demo_text.gif" width="33%">
 
-Supports to make CUT-IN App as the plugin of the CUT-IN Manager.
+This is the development kit to create CUT-IN Apps work with CUT-IN Manager.
 
-Sample app on Google play [here]().[FIXME]
+Try out the sample app on the [Google Play](https://play.google.com/store/apps/details?id=com.garlicg.sample.cutinappsupport).
 
 # Quick Start For Android Studio
 
-<img src="../picture/anim/demo_flow1.gif" width="33%"> <img src="../picture/anim/demo_flow2.gif" width="33%">
+This tutorial is the following configurations:
 
-
-
-Create a simple CUT-IN App which is the following configuration.
-
-- `CutinEngine` for simple animation using ic-launcher.
+- `CutinEngine` with simple animation using ic-launcher.
 - `CutinService` to controll `CutinEngine`.
 - `CutinPanel UI` works with the CUT-IN Manager.
+
+<img src="../picture/anim/demo_flow1.gif" width="33%"> <img src="../picture/anim/demo_flow2.gif" width="33%">
+
+After the tutorial, you can improve CUT-INs by adding `CutinEngine` as sample app.
 
 
 1. New Project
@@ -50,7 +50,7 @@ dependencies {
 
 
 
-4. Create CutinEngine for simple animation
+4. Create CutinEngine with simple animation
 --
 
 `CutinEngine` is abstract class to set layout and show animation. You must to call `finishCutin()` when animation end.
@@ -173,8 +173,8 @@ AndroidManifest.xml
 `SimpleCutinPanel` is subclass of `android.app.Activity`. It has feature belows
 
 - Light and Dark Panel Theme depends on CUT-IN Manager Theme.
-- Registration `CutinService`, `label` , and `orderId` to the CUT-IN Manager.
-- Controll CUT-IN Demo playing.
+- Registration `CutinService`, `title` , and `orderId` to the CUT-IN Manager.
+- Controll CUT-IN Demo playback.
 
 
 SamplePanel.java
@@ -187,8 +187,8 @@ public class SamplePanel extends SimpleCutinPanel{
     protected void onCreateCutins(CutinScreen cutinScreen) {
         ArrayList<CutinItem> items = new ArrayList<>();
 
-        // serviceClass , label , order id 
-        items.add(new CutinItem(SampleService.class, "Sample" , 0);
+        // serviceClass , title , order id 
+        items.add(new CutinItem(SampleService.class, "Sample" , SampleService.ORDER_SAMPLE);
         // can add other CUT-IN
         // items.add(new CutinItem(SampleService.class, "Other", 1);
 
@@ -215,7 +215,8 @@ AndroidManifest.xml
     </intent-filter>
 </activity>
 
-<!-- android:enabled - false do not show launcher icon -->
+<!-- For main launcher.
+        if you want to hide launcher icon , set android:enabled = false -->
 <activity-alias
     android:name=".LauncherActivityAlias"
     android:enabled="false"
@@ -232,17 +233,81 @@ AndroidManifest.xml
 
 Launch the CUT-IN Manager and confirm to register and play CUT-IN.
 
+===
 
-# About UI
+# Tips of creating Settings Activity 
 
-If you do not want to use CUT-IN Panel , you should create by your way.
-How to work with CUT-IN Manager is here.[FIXME]
+You can create Settings Activity (or Fragment) without using CutinPanel.
 
+
+Return a CUT-IN to the CUT-IN Manager
+--
+
+```java
+
+Intent intent = new Intent();
+intent.putExtra(ManagerUtils.EXTRA_CUTIN_ACTION, cutinServiceClass.getName()); // String
+intent.putExtra(ManagerUtils.EXTRA_CUTIN_TITLE, cutinTitle); // String
+intent.putExtra(ManagerUtils.EXTRA_ORDER_ID, orderId); // long
+setResult(Activity.RESULT_OK, intent);
+finish();
+```
+
+
+Get current CUT-IN Manager theme.
+--
+
+```java
+int cmTheme = getIntent().getIntExtra(ManagerUtils.EXTRA_THEME_UI , ManagerUtils.THEME_UI_LIGHT);
+```
+type | value | description
+--- | --- | ---
+int | ManagerUtils.THEME_UI_LIGHT | Light theme
+int | ManagerUtils.THEME_UI_DARK | Dark theme
+
+
+Confirm the presence using ManagerUtils class.
+--
+
+return | method | description
+--- | --- | ---
+boolean | isCalledFromManager(Intent getIntent) | This Activity called from the CUT-IN Manager or not.
+boolean | existManager(Context context) | CUT-IN Manager is installed in the device or not.
+Intent | buildMarketIntent() | Intent for view the CUT-IN Manager page on market.
+
+
+Preparing Demo playback
+--
+
+```
+private Demo mDemo;
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    mDemo = new Demo(context);
+}
+```
+
+Demo Playback
+--
+
+```java
+mDemo.play(cutinServiceClass , orderId)
+
+```
+
+```java
+mDemo.forceStop()
+
+```
+
+===
 
 # Proguard
 
 ```
--dontwarn com.garlicg.cutinsupport.**
+-dontwarn com.garlicg.cutin.appsupport.**
 ```
 
 
