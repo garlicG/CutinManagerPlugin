@@ -34,7 +34,7 @@ Trigger Extension Plugin
 App links 
 -- 
 
-<img src="picture/screenshot/Screenshot_2015-07-17-14-01-58.png" width="33%">
+<img src="picture/screenshot/Screenshot_2015-07-17-14-01-58.png" width="66%">
 
 The CUT-IN Manager has free link area for plugins. Please [send me](mailto://cut-info@gunew.jp) information belows if you want to add:
 
