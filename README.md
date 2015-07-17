@@ -34,20 +34,13 @@ Trigger Extension Plugin
 App links 
 -- 
 
-The CUT-IN Manager has link area for plugins. Please [send me](mailto://cut-info@gunew.jp) information or create a pull request if you created app.
+<img src="picture/screenshot/Screenshot_2015-07-17-14-01-58.png" width="33%">
 
-CUT-IN Apps
+The CUT-IN Manager has free link area for plugins. Please [send me](mailto://cut-info@gunew.jp) information belows if you want to add:
 
-Icon | App | Developer
---- | --- | --- 
-<img src="picture/icon/garlin3.png" width="72px"> | [Garlin](https://play.google.com/store/apps/details?id=com.garlicg.sample.cutin) | GarlicBetterRices 
-
- 
-Trigger Extensions
-
-Icon | App | Developer
---- | --- | ---
-<img src="picture/icon/alarmtrigger.png" width="72px"> | [Alarm Trigger](https://play.google.com/store/apps/details?id=com.garlicg.alarmtrigger) | GarlicBetterRices
+- Icon of app(144px*144px)
+- Name of app
+- URL of google play
 
 
 
