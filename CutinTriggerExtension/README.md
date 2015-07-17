@@ -1,5 +1,7 @@
 # CutinTriggerExtension
 
+<img src="../picture/anim/demo_stopwatch1.gif" width="33%"> <img src="../picture/anim/demo_stopwatch2.gif" width="33%">
+
 Supports to add trigger to the CUT-IN Manager.
 
 # Gradle
