@@ -1,23 +1,23 @@
 # CutinAppSupport
 
 
-<img src="../picture/anim/demo_garlin1.gif" width="33%"> <img src="../picture/anim/demo_garlin2.gif" width="33%">
+<img src="../picture/anim/demo_garlin1.gif" width="33%"> <img src="../picture/anim/demo_text.gif" width="33%">
 
-Supports to make CUT-IN App as the plugin of the CUT-IN Manager.
+This is the development kit to create CUT-IN Apps work with CUT-IN Manager.
 
-Sample app on Google play [here]().[FIXME]
+Try out the sample app on the [Google Play](https://play.google.com/store/apps/details?id=com.garlicg.sample.cutinappsupport).
 
 # Quick Start For Android Studio
 
-<img src="../picture/anim/demo_flow1.gif" width="33%"> <img src="../picture/anim/demo_flow2.gif" width="33%">
-
-
-
-Create a simple CUT-IN App which is the following configuration.
+This tutorial is the following configurations:
 
 - `CutinEngine` for simple animation using ic-launcher.
 - `CutinService` to controll `CutinEngine`.
 - `CutinPanel UI` works with the CUT-IN Manager.
+
+<img src="../picture/anim/demo_flow1.gif" width="33%"> <img src="../picture/anim/demo_flow2.gif" width="33%">
+
+After the tutorial, you can improve CUT-INs by adding `CutinEngine` as sample app.
 
 
 1. New Project
