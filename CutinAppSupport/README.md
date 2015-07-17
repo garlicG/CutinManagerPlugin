@@ -307,7 +307,7 @@ mDemo.forceStop()
 # Proguard
 
 ```
--dontwarn com.garlicg.cutinsupport.**
+-dontwarn com.garlicg.cutin.appsupport.**
 ```
 
 
