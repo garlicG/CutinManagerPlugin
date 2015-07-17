@@ -174,7 +174,7 @@ AndroidManifest.xml
 
 - Light and Dark Panel Theme depends on CUT-IN Manager Theme.
 - Registration `CutinService`, `title` , and `orderId` to the CUT-IN Manager.
-- Controll CUT-IN Demo playing.
+- Controll CUT-IN Demo playback.
 
 
 SamplePanel.java
@@ -188,7 +188,7 @@ public class SamplePanel extends SimpleCutinPanel{
         ArrayList<CutinItem> items = new ArrayList<>();
 
         // serviceClass , title , order id 
-        items.add(new CutinItem(SampleService.class, "Sample" , 0);
+        items.add(new CutinItem(SampleService.class, "Sample" , SampleService.ORDER_SAMPLE);
         // can add other CUT-IN
         // items.add(new CutinItem(SampleService.class, "Other", 1);
 
