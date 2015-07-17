@@ -2,24 +2,36 @@
 
 <img src="../picture/anim/demo_stopwatch1.gif" width="33%"> <img src="../picture/anim/demo_stopwatch2.gif" width="33%">
 
-Supports to add trigger to the CUT-IN Manager.
+This is the development kit to add extention trigger to the CUT-IN Manager.
 
-# Gradle
+Try out the sample Stopwatch app ont the [Google Play](https://play.google.com/store/apps/details?id=com.garlicg.sample.stopwatchtrigger).
 
+# Usage
+
+TODO
+
+
+1.Write build.gradle
+--
 
 ```groovy
 
-repositories {
-    jcenter()
-}
-
- (...)
-
 dependencies {
-    compile 'com.garlicg:cutin-trigger-extension:0.9.1'
+    compile 'com.garlicg:cutin-trigger-extension:0.9.2'
 }
 
 ```
+
+2. Create Settings
+--
+
+TODO
+
+3. Send Trigger
+--
+
+TODO
+
 
 
 # API Level
