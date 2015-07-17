@@ -233,6 +233,7 @@ AndroidManifest.xml
 
 Launch the CUT-IN Manager and confirm to register and play CUT-IN.
 
+===
 
 # Tips of creating Settings Activity 
 
@@ -301,7 +302,7 @@ mDemo.forceStop()
 
 ```
 
-
+===
 
 # Proguard
 
