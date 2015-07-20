@@ -231,7 +231,7 @@ AndroidManifest.xml
 7. Confirmation
 --
 
-Launch the CUT-IN Manager and confirm to register and play CUT-IN.
+Launch the CUT-IN Manager and check the registration and playback CUT-IN.
 
 ===
 

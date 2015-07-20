@@ -31,20 +31,21 @@ Trigger Extension Plugin
 [CutinTriggerExtension](https://github.com/garlicG/CutinManagerPlugin/tree/master/CutinTriggerExtension) is the development kit to add extention trigger to the CUT-IN Manager.
 
 
-App links 
+App Links 
 -- 
 
 <img src="picture/screenshot/Screenshot_2015-07-17-14-01-58.png" width="66%">
 
-The CUT-IN Manager has free link area for plugins. Please [send me](mailto://cut-info@gunew.jp) information belows if you want to add:
+The CUT-IN Manager has free link area for plugins. Please create issue include following information if you want to add:
 
 - Icon of app(144px*144px)
 - Name of app
 - URL of google play
 
+Issue sample is [here](https://github.com/garlicG/CutinManagerPlugin/issues/17).
 
 
 API Level
 --
 
-CUT-IN Manager and Plugins work on API level 10+.
+CUT-IN Manager and plugins work on API level 10+.
