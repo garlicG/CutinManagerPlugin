@@ -15,16 +15,16 @@ public abstract class CutinEngine {
         mCutinService = cutinService;
     }
 
-    protected Context getContext(){
+    public Context getContext(){
         return mCutinService;
     }
 
-    protected void finishCutin(){
+    public void finishCutin(){
         if(mCutinService.isDestroyed())return;
         mCutinService.stopSelf();
     }
 
-    protected boolean isDestroyed(){
+    public boolean isDestroyed(){
         return mCutinService.isDestroyed();
     }
 }

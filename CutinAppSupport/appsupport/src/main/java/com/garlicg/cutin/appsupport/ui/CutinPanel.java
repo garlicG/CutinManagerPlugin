@@ -1,34 +1,22 @@
 package com.garlicg.cutin.appsupport.ui;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.util.DisplayMetrics;
-import android.view.WindowManager;
 
 import com.garlicg.cutin.appsupport.CutinItem;
-import com.garlicg.cutin.appsupport.ManagerUtils;
 import com.garlicg.cutin.appsupport.Demo;
+import com.garlicg.cutin.appsupport.ManagerUtils;
 import com.garlicg.cutin.appsupport.R;
-import com.garlicg.cutin.appsupport.TriggerInfo;
 
 /**
  * Base Panel Activity
  * This activity will be transparent with dark or light theme depends on state from intent,
  */
 public abstract class CutinPanel extends FragmentActivity {
-
-    private boolean mCalledFromManager;
-    private int mTriggerType;
 
     private Demo mDemo;
     protected Demo getDemo(){
@@ -38,37 +26,8 @@ public abstract class CutinPanel extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // set theme of cutin manager
-        Intent intent = getIntent();
-        int cmTheme = intent.getIntExtra(ManagerUtils.EXTRA_THEME_UI , ManagerUtils.THEME_UI_LIGHT);
-        setTheme(resolveDialogThemeResource(cmTheme));
-
-        // trigger id from cutin manager
-        mTriggerType = getIntent().getIntExtra(TriggerInfo.EXTRA_TRIGGER_TYPE, TriggerInfo.TRIGGER_TYPE_DEMO);
-
-        // flag of called from manager?
-        mCalledFromManager = ManagerUtils.isCalledFromManager(intent);
-
+        injectExtras(getIntent());
         mDemo = new Demo(this);
-
-    }
-
-    protected void resizeWindow(){
-        int orientation = getResources().getConfiguration().orientation;
-        int a = orientation == Configuration.ORIENTATION_LANDSCAPE ? 70:90;
-        WindowManager.LayoutParams lp = getWindow().getAttributes();
-        DisplayMetrics metrics = getResources().getDisplayMetrics();
-        lp.width = metrics.widthPixels * a / 100;
-        getWindow().setAttributes(lp);
-    }
-
-    protected int resolveDialogThemeResource(int cmTheme){
-        if(cmTheme == ManagerUtils.THEME_UI_DARK){
-            return R.style.CutinPanel_Dark;
-        }else {
-            return R.style.CutinPanel_Light;
-        }
     }
 
     @Override
@@ -77,12 +36,35 @@ public abstract class CutinPanel extends FragmentActivity {
         mDemo.forceStop();
     }
 
-    /////////////////
-    // methods
+    //////////////
+    // extras
+
+    private boolean mCalledFromManager;
+    private int mCutinManagerTheme;
+
+    private void injectExtras(Intent intent){
+
+        // flag of called from manager?
+        mCalledFromManager = ManagerUtils.isCalledFromManager(intent);
+
+        mCutinManagerTheme = intent.getIntExtra(ManagerUtils.EXTRA_THEME_UI , ManagerUtils.THEME_UI_LIGHT);
+    }
+
+
+    protected int getCmTheme(){
+        return mCutinManagerTheme;
+    }
 
     public boolean isPickable(){
         return mCalledFromManager;
     }
+
+    protected int resolvePanelThemeResource(int cmTheme){
+        return cmTheme == ManagerUtils.THEME_UI_DARK ? R.style.CutinPanel_Dark : R.style.CutinPanel_Light;
+    }
+
+    //////////////
+    // methods
 
     public void handleOKClick(@Nullable CutinItem item){
         // called from manager
@@ -112,100 +94,13 @@ public abstract class CutinPanel extends FragmentActivity {
         FragmentManager fm = getSupportFragmentManager();
         // existManager
         if(ManagerUtils.existManager(this)){
-            new LaunchManagerDialog().showSingly(fm);
+            new SimpleCutinDialogs.LaunchAlert().showSingly(fm);
         }
         // show go to Market dialog
         else {
-            new DownloadManagerDialog().showSingly(fm);
+            new SimpleCutinDialogs.DownloadAlert().showSingly(fm);
         }
     }
-
-    public int getTriggerType(){
-        return mTriggerType;
-    }
-
-
-    //////////////////
-    // dialogs
-
-
-    public static class DownloadManagerDialog extends SimpleAlert implements DialogInterface.OnClickListener{
-        @Override
-        protected String getDialogTag() {
-            return "DownloadManagerDialog";
-        }
-
-        @Override
-        protected String getMessage() {
-            return getString(R.string.cp_message_need_manager);
-        }
-
-        @Override
-        protected String getButton() {
-            return getString(R.string.cp_download);
-        }
-
-        @Override
-        public void onClick(DialogInterface dialogInterface, int i) {
-            Intent intent = ManagerUtils.buildMarketIntent();
-            startActivity(intent);
-            getActivity().finish();
-        }
-    }
-
-
-    public static class LaunchManagerDialog extends SimpleAlert implements DialogInterface.OnClickListener{
-
-        @Override
-        protected String getDialogTag() {
-            return "LaunchManagerDialog";
-        }
-
-        @Override
-        protected String getMessage() {
-            return getString(R.string.cp_message_launch_manager);
-        }
-
-        @Override
-        protected String getButton() {
-            return getString(R.string.cp_launch);
-        }
-
-        @Override
-        public void onClick(DialogInterface dialogInterface, int i) {
-            Intent startManager = ManagerUtils.buildLauncherIntent(getActivity());
-            startActivity(startManager);
-            getActivity().finish();
-        }
-    }
-
-
-
-    public static abstract class SimpleAlert extends DialogFragment implements DialogInterface.OnClickListener{
-
-        public void showSingly(FragmentManager manager) {
-            final String tag = getDialogTag();
-            if(manager.findFragmentByTag(tag) != null)return;
-            super.show(manager, tag);
-        }
-
-        protected abstract String getDialogTag();
-        protected abstract String getMessage();
-        protected abstract String getButton();
-
-        @NonNull
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setMessage(getMessage());
-            builder.setPositiveButton(getButton(), this);
-            return builder.create();
-        }
-
-        @Override
-        public void onClick(DialogInterface dialogInterface, int i) {}
-    }
-
 
 
     /**
