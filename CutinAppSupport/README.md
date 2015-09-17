@@ -33,7 +33,7 @@ Create a new android project with choosing "Add No Activity".
 
 dependencies {
     compile 'com.android.support:appcompat-v7:21.1.1'
-    compile 'com.garlicg:cutin-app-support:3.0.4'
+    compile 'com.garlicg:cutin-app-support:3.1.0'
 }
 
 ```
