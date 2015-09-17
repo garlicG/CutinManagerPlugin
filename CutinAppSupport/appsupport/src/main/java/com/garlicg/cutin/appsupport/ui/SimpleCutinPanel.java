@@ -2,10 +2,13 @@ package com.garlicg.cutin.appsupport.ui;
 
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -16,7 +19,7 @@ import com.garlicg.cutin.appsupport.R;
 
 import java.util.ArrayList;
 
-public abstract class SimpleCutinPanel extends CutinPanel implements AdapterView.OnItemClickListener , View.OnClickListener{
+public abstract class SimpleCutinPanel extends CutinPanel implements AdapterView.OnItemClickListener{
 
     private TextView mOptionButton;
     public TextView getOptionButton(){
@@ -38,6 +41,10 @@ public abstract class SimpleCutinPanel extends CutinPanel implements AdapterView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // set panel theme
+        setTheme(resolvePanelThemeResource(getCmTheme()));
+
+        // set views
         setContentView(R.layout.cutin_simple_screen);
 
         // title
@@ -58,7 +65,12 @@ public abstract class SimpleCutinPanel extends CutinPanel implements AdapterView
 
         // OK button
         mOkButton = findById(android.R.id.button2);
-        mOkButton.setOnClickListener(this);
+        mOkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                handleOKClick(getCheckedItem());
+            }
+        });
 
         // Option button
         mOptionButton = findById(android.R.id.button1);
@@ -76,6 +88,15 @@ public abstract class SimpleCutinPanel extends CutinPanel implements AdapterView
 
         // resize window size like dialog
         resizeWindow();
+    }
+
+    protected void resizeWindow(){
+        int orientation = getResources().getConfiguration().orientation;
+        int a = orientation == Configuration.ORIENTATION_LANDSCAPE ? 70:90;
+        WindowManager.LayoutParams lp = getWindow().getAttributes();
+        DisplayMetrics metrics = getResources().getDisplayMetrics();
+        lp.width = metrics.widthPixels * a / 100;
+        getWindow().setAttributes(lp);
     }
 
 
@@ -99,11 +120,6 @@ public abstract class SimpleCutinPanel extends CutinPanel implements AdapterView
             getDemo().play(ci);
             setOkButtonEnable(true);
         }
-    }
-
-    @Override
-    public void onClick(View view) {
-        handleOKClick(getCheckedItem());
     }
 
     public void setOkButtonEnable(boolean enable){
